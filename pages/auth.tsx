@@ -1,5 +1,5 @@
 import { AppLayout } from "@/layouts/app";
 
-export default function Home() {
+export default function Auth() {
   return <AppLayout></AppLayout>;
 }

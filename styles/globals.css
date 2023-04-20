@@ -1,107 +1,174 @@
 :root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  /* Customizable colors : menus and layouts */
+  --brandPrimary: #005eb8;
+  --brandSecondary: #000;
+  --brandText: #d9d9d9;
 
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --menu: #062f5d;
 
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
+  --primary: #005eb8;
+  --primary20: #005eb833;
 
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
+  --secondary: #32c5fd;
+  --secondary20: #32c5fd33;
 
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
-}
+  --tertiary: #0c618f;
+  --tertiary20: #0c618f33;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  --quaternary: #a7bdc8;
+  --quaternary20: #a7bdc833;
 
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
+  --primaryAlpha: #568ecd;
 
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
+  --dark: #000;
+  --dark20: #00000033;
 
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
-}
+  --darkgrey: #898989;
+  --darkgrey20: #89898933;
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  --grey: #d2d2d2;
+  --grey20: #d2d2d233;
+
+  --lightgrey: #eaedf3;
+  --lightgrey20: #eaedf333;
+
+  --extralightgrey: #f9f9f9;
+  --charcoalgrey: #3e3f42;
+  --light: #fff;
+
+  --greyLoader: #dbdbdb;
+
+  /* Customizable colors :  concerns */
+
+  --success: #2ed376;
+  --strongSuccess: #209352;
+  --success20: #2ed37633;
+
+  --warning: #ff9137;
+  --warning20: #ff913733;
+
+  --danger: #fd5c3f;
+  --danger20: #fd5c3f33;
+
+  /* Customizable colors :  charts */
+
+  --silver: #bdc3c7;
+  --asbestos: #7f8c8d;
+  --clouds: #ecf0f1;
+  --alizarin: #e54d42;
+  --sunflower: #f0c330;
+  --carrot: #e47e30;
+  --pomegranate: #be3a31;
+  --orange: #f19b2c;
+  --pumpkin: #d15419;
+  --concrete: #95a5a6;
+  --wisteria: #8d48ab;
+  --midnightblue: #2d3e4f;
+  --nephritis: #30ad63;
+  --belizehole: #2f81b7;
+  --greensea: #239f85;
+  --wetasphalt: #35495d;
+  --amethyst: #9a5cb4;
+  --peterriver: #3a99d8;
+  --turquoise: #29bb9c;
+  --emerald: #39ca74;
+
+  /* Customizable colors : others */
+
+  --focus: var(--secondary);
+  --darkTextColor: var(--dark);
+  --greyTextColor: #000000;
+  --lightTextColor: var(--light);
+  --lighterTextColor: #ffffff;
+  --lightBackground: var(--light);
+  --greyBackground: #f7f7f7;
+  --greyerBackground: #f2f2f2;
+  --darkBackground: var(--primary);
+  --darkActionColor: var(--primary);
+  --darkActionHoverColor: #005eb8;
+  --lightBorderColor: #6b6b6b;
+  --darkBorderColor: #005eb8;
+  --linkColor: var(--primary);
+  --linkHoverColor: #005eb8;
+  --neutralColor: #4c4c4c;
+
+  /* Transitions */
+  --baseAnimationrate: 0.3s;
+
+  /* Layout */
+  --column: 4rem;
+  --gutter: 1.5rem;
+  --block: calc(var(--column) * 3 + var(--gutter) * 2);
+  --vGrid: 0.375rem;
+  --vRythm: calc(6 * var(--vGrid));
+  --border: calc(var(--vGrid) / 3);
+  --thinBorder: calc(var(--vGrid) / 5);
+  --heavyBorder: calc(var(--vGrid) * 1.5);
+  --borderRadius: var(--vGrid);
+
+  /*  RWD : Size is menu + component */
+  --menuWidth: calc(var(--column) + var(--gutter));
+  --rwdEpsilon: 0.00001rem;
+  --startS: 0rem;
+  --startM: calc(var(--menuWidth) + var(--block) * 2 + var(--gutter) * 3);
+  --startL: calc(var(--menuWidth) + var(--block) * 4 + var(--gutter) * 6);
+  --startXL: calc(var(--menuWidth) + var(--block) * 6 + var(--gutter) * 7);
+
+  --endS: calc(var(--startM) - var(--rwdEpsilon));
+  --endM: calc(var(--startL) - var(--rwdEpsilon));
+  --endL: calc(var(--startXL) - var(--rwdEpsilon));
+
+  /* Font sizes */
+  --tinyFontSize: calc(1.5 * var(--vGrid));
+  --smallFontSize: calc(2 * var(--vGrid));
+  --smallLineHeight: calc(2 * var(--vGrid));
+
+  --tableHeaderFontSize: calc(2.25 * var(--vGrid));
+
+  --formInputFontSize: calc(2.5 * var(--vGrid));
+
+  --mediumFontSize: calc(3 * var(--vGrid));
+  --mediumLineHeight: calc(4 * var(--vGrid));
+
+  --bigFontSize: calc(4 * var(--vGrid));
+  --bigLineHeight: calc(6 * var(--vGrid));
+
+  --greatFontSize: calc(6 * var(--vGrid));
+  --greatLineHeight: calc(8 * var(--vGrid));
+
+  --giantFontSize: calc(8 * var(--vGrid));
+  --giantLineHeight: calc(8 * var(--vGrid));
+
+  /* Z-index */
+  --zBase: 0;
+  --zAbove: 10;
+
+  --zNavigation: calc(var(--zAbove) + var(--zBase));
+  --zTooltip: calc(var(--zAbove) + var(--zBase));
+  --zLoadingContainer: calc(var(--zAbove) + var(--zBase));
+  --zNavigationMenu: calc(var(--zAbove) + var(--zNavigation));
+  --zIcon: calc(var(--zAbove) + var(--zLoadingContainer));
+  --zDropdown: calc(var(--zAbove) + var(--zLoadingContainer));
+  --zOverlay: calc(var(--zAbove) + var(--zDropdown));
+  --zPopin: calc(var(--zAbove) + var(--zOverlay));
+  --zGridSystem: 999999;
 }
 
 html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+body,
+#__next {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: var(--mediumFontSize);
+  line-height: var(--mediumLineHeight);
+  font-family: var(--contentFont);
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
