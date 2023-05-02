@@ -1,5 +1,3 @@
-
-
 import { Layout } from "../layouts/main";
 import Swagger from "../components/swagger";
 import ContentBlock from "../components/contentBlock";
@@ -9,6 +7,7 @@ export default function ApiReference() {
     <Layout
       title="API Reference"
       description=""
+      image="/illustrations/banner.jpg"
     >
       <ContentBlock>
         <Swagger />
