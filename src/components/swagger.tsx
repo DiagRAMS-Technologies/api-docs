@@ -1,13 +1,22 @@
 import React from "react";
-import SwaggerUI from "swagger-ui-react"
-import "swagger-ui-react/swagger-ui.css"
+import type SwaggerUI from "swagger-ui-react";
+import "swagger-ui-react/swagger-ui.css";
+import dynamic from "next/dynamic";
+
+const DynamicSwagger = dynamic<SwaggerUI>(
+  () => import("swagger-ui-react"),
+  {
+    loading: () => <p>Loading...</p>,
+    ssr: false,
+  },
+);
 
 const Swagger = () => {
-  return(
+  return (
     <div className="App">
-      <SwaggerUI url="http://api.diagrams.localhost:8000/v0/openAPI?mutedParameters=X-APP-Version,X-SDK-Version,X-API-Version" />
+      <DynamicSwagger url="https://api.diagrams-technologies.com/v0/openAPI?mutedParameters=X-APP-Version,X-SDK-Version,X-API-Version" />
     </div>
-  )
+  );
 };
 
 export default Swagger;
