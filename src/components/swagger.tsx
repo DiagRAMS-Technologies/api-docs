@@ -11,10 +11,18 @@ const DynamicSwagger = dynamic<SwaggerUI>(
   },
 );
 
+const TAGS = ["events","images","attachments","sensors","reports","search","anomalies","data","maintenances","factories","organisations","users","auth","trends"]
+
 const Swagger = () => {
+  let url_api = "https://api.diagrams-technologies.dev/v0/openAPI?mutedParameters=X-APP-Version,X-SDK-Version,X-API-Version\n"
+  TAGS.forEach(t => {
+    url_api += "&\nmutedTags=" + t + "\n"
+  })
   return (
     <div className="App">
-      <DynamicSwagger url="https://api.diagrams-technologies.com/v0/openAPI?mutedParameters=X-APP-Version,X-SDK-Version,X-API-Version" />
+      <DynamicSwagger url={url_api} 
+        docExpansion='none'
+       />
     </div>
   );
 };

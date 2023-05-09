@@ -3,9 +3,6 @@ title: Data bridge
 description: Learn how to wire your data with us.
 date: "2023-04-20T14:15:47.659Z"
 draft: false
-illustration:
-  href: "/illustrations/banner.jpg"
-  alt: "DiagRAMS banner"
 ---
 
 # Data bridge

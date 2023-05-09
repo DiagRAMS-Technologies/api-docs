@@ -13,7 +13,7 @@ const Anchored = ({
       {children}{" "}
       <small>
         <Link legacyBehavior href={`#${id}`}>
-          <a className="icon" id={id} title="Lien vers cette section">
+          <a className="icon" id={id}>
             <span>🔗</span>
           </a>
         </Link>
@@ -24,13 +24,12 @@ const Anchored = ({
         }
         a.icon {
           display: none;
-          width: var(--column);
-          height: var(--vRythm);
-          background: var(--primary);
+          width: calc(var(--column)*0.9);
+          height: calc(var(--vRythm)*0.9);
+          background: var(--quaternary);
           mask-repeat: no-repeat;
           mask-position: left center;
-          -webkit-mask-size: calc(var(--vRythm) * 1);
-          mask-size: calc(var(--vRythm) * 1);
+          mask-size: calc(var(--vRythm) * 0.65);
         }
         .root:hover a.icon {
           display: inline-block;
