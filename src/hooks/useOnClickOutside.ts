@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useEffect, useCallback, useRef, useState } from "react";
 
 export type UseOnClickOutsideHook = (
