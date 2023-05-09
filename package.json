@@ -31,6 +31,7 @@
     "yerror": "^6.2.1",
     "yup": "^1.1.1"
   },
+  "homepage": "https://diagrams-technologies.github.io/api-doc/",
   "devDependencies": {
     "jest": "^29.5.0",
     "prettier": "2.8.7"
