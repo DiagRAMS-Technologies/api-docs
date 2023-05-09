@@ -17,14 +17,8 @@ export function Layout({ children, title, description, image }): JSX.Element {
       {/* <Footer /> */}
       <style jsx>{`
         .root {
-          display: grid;
-          grid-template-rows: calc(var(--vRythm) * 2) auto;
-          grid-template-columns: calc((var(--column) * 5)) 1fr calc(
-              (var(--column) * 5)
-            );
-        }
-        .contents {
-          grid-column: 2 / 3;
+          display: block;
+          background-color: #f7f6f6;
         }
       `}</style>
     </div>

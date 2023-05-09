@@ -1,57 +1,30 @@
-import React, { useEffect } from "react";
-import { SwaggerUIBundle, SwaggerUIStandalonePreset } from "swagger-ui-dist";
+import React from "react";
+import type SwaggerUI from "swagger-ui-react";
+import "swagger-ui-react/swagger-ui.css";
+import dynamic from "next/dynamic";
 
-const DOM_ID = "swagger-ui";
-const SWAGGER_URL =
-  "http://api.diagrams.localhost:8000/v0/openAPI?mutedParameters=X-APP-Version,X-SDK-Version,X-API-Version";
-  //"https://api.diagrams-technologies.dev/v0/openAPI?mutedParameters=X-APP-Version,X-SDK-Version,X-API-Version";
+const DynamicSwagger = dynamic<SwaggerUI>(
+  () => import("swagger-ui-react"),
+  {
+    loading: () => <p>Loading...</p>,
+    ssr: false,
+  },
+);
 
-const TAGS_ORDER = {
-  system: 1,
-  users: 2,
-  organisations: 3,
-  devices: 4,
-  oauth2: 5,
-  partners: 6,
-  data: 7
-};
-
-const HideEmptyTagsPlugin = () => {
-  return {
-    statePlugins: {
-      spec: {
-        wrapSelectors: {
-          taggedOperations: ori => (...args) => {
-            return ori(...args).filter(
-              tagMeta =>
-                tagMeta.get("operations") && tagMeta.get("operations").size > 0
-            );
-          }
-        }
-      }
-    }
-  };
-};
+const TAGS = ["events","images","attachments","sensors","reports","search","anomalies","data","maintenances","factories","organisations","users","auth","trends"]
 
 const Swagger = () => {
-  useEffect(() => {
-    SwaggerUIBundle({
-      url: SWAGGER_URL,
-      dom_id: `#${DOM_ID}`,
-      presets: [
-        SwaggerUIBundle.presets.apis,
-        SwaggerUIStandalonePreset.slice(1)
-      ],
-      plugins: [SwaggerUIBundle.plugins.DownloadUrl, HideEmptyTagsPlugin],
-      layout: "StandaloneLayout",
-      displayOperationId: true,
-      deepLinking: true,
-      tagsSorter: (a, b) => {
-        return (TAGS_ORDER[a] || 99) - (TAGS_ORDER[b] || 99);
-      }
-    });
-  }, []);
-  return <div id={DOM_ID} />;
+  let url_api = "https://api.diagrams-technologies.dev/v0/openAPI?mutedParameters=X-APP-Version,X-SDK-Version,X-API-Version\n"
+  TAGS.forEach(t => {
+    url_api += "&\nmutedTags=" + t + "\n"
+  })
+  return (
+    <div className="App">
+      <DynamicSwagger url={url_api} 
+        docExpansion='none'
+       />
+    </div>
+  );
 };
 
 export default Swagger;
