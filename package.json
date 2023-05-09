@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export && touch out/.nojekyll && echo 'docs.diagrams-technologies.com' > out/CNAME"
+    "export": "next export && touch out/.nojekyll && echo 'https://diagrams-technologies.github.io/api-doc' > out/CNAME"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.1.0",
@@ -31,7 +31,7 @@
     "yerror": "^6.2.1",
     "yup": "^1.1.1"
   },
-  "homepage": "https://diagrams-technologies.github.io/api-doc/",
+  "homepage": "https://diagrams-technologies.github.io/api-doc",
   "devDependencies": {
     "jest": "^29.5.0",
     "prettier": "2.8.7"
