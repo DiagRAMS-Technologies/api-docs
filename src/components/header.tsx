@@ -6,51 +6,53 @@ import styled from "styled-components";
 export default function Header(): JSX.Element {
   const router = useRouter();
 
-  const ImageWrap = styled.span`
-    padding: 20px;
-    display: block;
-    float: left;
-    background-color: var(--light);
-    postion: relative;
-    max-width: 50%;
-    height: auto;
-  `;
 
   return (
     <div className="nav-bar">
       <nav>
-        <ImageWrap>
-          <a href="/">
+          <span className="essai">
             <Image
-              className="image-header"
               src="/../public/images/diagrams.png"
               alt="Picture of the author"
               width={250}
               height={50}
             />
-          </a>
-        </ImageWrap>
+          </span>
         {[
+          {
+            name: "Home",
+            path: "/",
+            isHome: true,
+          },
           {
             name: "Authentication",
             path: "/authentication",
+            isHome: false,
           },
           {
             name: "Data bridge",
             path: "/data-bridge",
+            isHome: false,
           },
           {
             name: "API Reference",
             path: "/api-reference",
+            isHome: false,
           },
-          {
-            name: "Contact",
-            path: "/contact",
-          },
-        ].map(({ name, path }, index) => {
+        ].map(({ name, path, isHome }, index) => {
           return (
             <Link key={index} legacyBehavior href={path}>
-              <a className={router.asPath.startsWith(path) ? "selected" : ""}>
+              <a
+                className={
+                  (
+                    isHome
+                      ? router.asPath === path
+                      : router.asPath.startsWith(path)
+                  )
+                    ? "selected"
+                    : ""
+                }
+              >
                 <span>{name}</span>
               </a>
             </Link>
@@ -99,6 +101,7 @@ export default function Header(): JSX.Element {
         nav > a:hover {
           color: var(--primary);
         }
+
       `}</style>
     </div>
   );

@@ -10,7 +10,8 @@ const Paragraph = ({
     {children}
     <style jsx>{`
       .root {
-        margin: 0 0 var(--vRythm) 0;
+        margin: 0 0 calc(var(--vRythm)*0.5) 0;
+        color: var(--charcoalgrey)
       }
     `}</style>
   </p>

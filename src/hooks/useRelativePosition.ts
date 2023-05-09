@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import useDimensions from "./useDimensions";
 import YError from "yerror";
 import { useState, useEffect } from "react";

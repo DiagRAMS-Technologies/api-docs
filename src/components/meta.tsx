@@ -2,7 +2,6 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { publicRuntimeConfig } from "../utils/config";
 import {
-  FACEBOOK_ACCOUNT,
   ORGANISATION_NAME,
   ORGANISATION_PRIMARY_COLOR,
   TWITTER_ACCOUNT,
@@ -80,7 +79,6 @@ export default function Meta({ name, title, description, image }: Props) {
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:site_name" content={name} />
-      <meta property="fb:admins" content={FACEBOOK_ACCOUNT} />
       {imageURL ? <meta property="og:image" content={imageURL} /> : null}
 
       {/* Twitter */}
