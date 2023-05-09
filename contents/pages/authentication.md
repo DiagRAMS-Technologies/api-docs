@@ -3,9 +3,6 @@ title: Authentification
 description: Discover how to authenticate with our API
 date: "2023-04-20T14:15:47.659Z"
 draft: false
-illustration:
-  href: "/illustrations/banner.jpg"
-  alt: "DiagRAMS banner"
 ---
 
 # API Auth guide

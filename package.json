@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export && touch out/.nojekyll && echo 'docs.diagrams-technologies.com' > out/CNAME"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.1.0",
@@ -30,8 +31,48 @@
     "yerror": "^6.2.1",
     "yup": "^1.1.1"
   },
+  "homepage": "https://diagrams-technologies.github.io/api-doc/",
   "devDependencies": {
     "jest": "^29.5.0",
     "prettier": "2.8.7"
+  },
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "rules": {
+      "react/prop-types": "off",
+      "curly": "error",
+      "react/react-in-jsx-scope": "off",
+      "react/no-unknown-property": [
+        "error",
+        {
+          "ignore": [
+            "jsx",
+            "global"
+          ]
+        }
+      ],
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          "argsIgnorePattern": "_",
+          "varsIgnorePattern": "_"
+        }
+      ]
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "env": {
+      "es6": true,
+      "browser": true,
+      "jest": true,
+      "node": true
+    }
   }
 }

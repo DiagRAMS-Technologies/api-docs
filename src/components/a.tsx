@@ -48,7 +48,7 @@ const Anchor = ({
         a,
         a:visited {
           cursor: pointer;
-          text-decoration: underline;
+          text-decoration: none;
           color: var(--primary);
           line-height: var(--mediumLineHeight);
         }
