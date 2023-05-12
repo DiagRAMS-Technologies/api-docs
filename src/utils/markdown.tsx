@@ -192,7 +192,7 @@ const emphasisMap: NodeToElementMapper<MarkdownEmphasisNode> = (
   </Emphasis>
 );
 const codeMap: NodeToElementMapper<MarkdownCodeNode> = (context, node) => (
-  <div className="syntax">
+  <div className="syntax" key={context.index}>
     <SyntaxHighlighter
       key={context.index}
       language={'javascript'}
