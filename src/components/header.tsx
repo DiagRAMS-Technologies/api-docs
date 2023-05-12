@@ -1,23 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import styled from "styled-components";
+import { publicRuntimeConfig } from "../utils/config";
 
 export default function Header(): JSX.Element {
   const router = useRouter();
 
-
   return (
     <div className="nav-bar">
       <nav>
-          <span className="essai">
-            <Image
-              src="/../public/images/diagrams.png"
-              alt="Picture of the author"
-              width={250}
-              height={50}
-            />
-          </span>
+        <span className="essai">
+          <Image
+            src={`${publicRuntimeConfig.basePath}/images/diagrams.png`}
+            alt="Picture of the author"
+            width={250}
+            height={50}
+          />
+        </span>
         {[
           {
             name: "Home",
@@ -101,7 +100,6 @@ export default function Header(): JSX.Element {
         nav > a:hover {
           color: var(--primary);
         }
-
       `}</style>
     </div>
   );
