@@ -1,7 +1,7 @@
 ---
 title: Considerations for storing secrets
 description: When using the DiagRAMS API you will need to store our application id/secret pair, here are some key principles to keep in mind.
-leafname: Storing secrets
+leafname: storing-secrets
 date: "2023-06-05T11:00:00Z"
 draft: false
 illustration:

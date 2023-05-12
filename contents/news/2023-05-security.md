@@ -1,7 +1,7 @@
 ---
 title: Training to cybersecurity
 description: Our commitment to cybersecurity is a neverending quest and our employees are now more confident on their skills thanks to the ANSII training program.
-leafname: Security training
+leafname: security-training
 date: "2023-05-22T11:00:00Z"
 draft: false
 illustration:
