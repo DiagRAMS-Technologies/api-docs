@@ -24,8 +24,8 @@ const Anchored = ({
         }
         a.icon {
           display: none;
-          width: calc(var(--column)*0.9);
-          height: calc(var(--vRythm)*0.9);
+          width: calc(var(--column) * 0.9);
+          height: calc(var(--vRythm) * 0.9);
           background: var(--quaternary);
           mask-repeat: no-repeat;
           mask-position: left center;
@@ -33,11 +33,11 @@ const Anchored = ({
         }
         .root:hover a.icon {
           display: inline-block;
-          mask-image: url("${publicRuntimeConfig.buildPrefix}/images/icons/link.svg");
+          mask-image: url("${publicRuntimeConfig.assetPrefix}${publicRuntimeConfig.basePath}/images/icons/link.svg");
         }
         a.icon:target {
           display: inline-block;
-          mask-image: url("${publicRuntimeConfig.buildPrefix}/images/icons/target.svg");
+          mask-image: url("${publicRuntimeConfig.assetPrefix}${publicRuntimeConfig.basePath}/images/icons/target.svg");
         }
         a.icon span {
           display: none;

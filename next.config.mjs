@@ -1,23 +1,28 @@
 /** @type {import('next').NextConfig} */
 
-const buildPrefix = process.env.NODE_ENV === "production" ? "" : "";
 const baseURL =
   process.env.NODE_ENV === "production"
-    ? "https://docs.diagrams-technologies.com"
+    ? "https://diagrams-technologies.github.io"
     : "http://docs.diagrams.localhost:3000";
+const assetPrefix = baseURL;
+const basePath = process.env.NODE_ENV === "production" ? `/api-doc` : "";
 
 const config = {
+  output: 'export',
+  trailingSlash: false,
+  distDir: 'out',
   reactStrictMode: true,
   images: {
     unoptimized: true
   },
   publicRuntimeConfig: {
     environment: process.env.NODE_ENV,
-    buildPrefix,
     baseURL,
+    basePath,
+    assetPrefix,
   },
-  assetPrefix: process.env.NODE_ENV === "production" ? "" : "",
-  basePath: process.env.NODE_ENV === "production" ? "" : "",
+  assetPrefix,
+  basePath,
 };
 
 export default config;

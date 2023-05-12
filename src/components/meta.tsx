@@ -19,18 +19,18 @@ export default function Meta({ name, title, description, image }: Props) {
   const fullTitle = `${title ? `${title} - ` : ""}${name}`;
   const canonicalURL =
     publicRuntimeConfig.baseURL +
-    publicRuntimeConfig.buildPrefix +
+    publicRuntimeConfig.basePath +
     router?.asPath;
   const imageURL =
     typeof image === "string" && image && /^https?:\/\//.test(image)
       ? image
       : image
-      ? publicRuntimeConfig.baseURL +
-        publicRuntimeConfig.buildPrefix +
+      ? publicRuntimeConfig.assetPrefix +
+        publicRuntimeConfig.basePath +
         (image.startsWith("/") ? "" : "/") +
         image
-      : publicRuntimeConfig.baseURL +
-        publicRuntimeConfig.buildPrefix +
+      : publicRuntimeConfig.assetPrefix +
+        publicRuntimeConfig.basePath +
         "/images/banner.png";
 
   return (
@@ -46,19 +46,19 @@ export default function Meta({ name, title, description, image }: Props) {
       <link
         rel="icon"
         type="image/svg+xml"
-        href={publicRuntimeConfig.buildPrefix + "/images/favicon.svg"}
+        href={publicRuntimeConfig.basePath + "/images/favicon.svg"}
         sizes="any"
       />
       <link
         rel="icon"
         type="image/png"
-        href={publicRuntimeConfig.buildPrefix + "/images/favicon-16.png"}
+        href={publicRuntimeConfig.basePath + "/images/favicon-16.png"}
         sizes="16x16"
       />
       <link
         rel="icon shortcut"
         type="image/png"
-        href={publicRuntimeConfig.buildPrefix + "/images/favicon-128.png"}
+        href={publicRuntimeConfig.basePath + "/images/favicon-128.png"}
         sizes="128x128"
       />
       <meta name="robots" content="index,follow" />
