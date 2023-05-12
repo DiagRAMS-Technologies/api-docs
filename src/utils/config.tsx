@@ -3,7 +3,6 @@ import getConfig from 'next/config';
 export type GlobalConfig = {
   publicRuntimeConfig: {
     environment: string;
-    assetPrefix: string;
     baseURL: string;
     basePath: string;
   };

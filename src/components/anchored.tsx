@@ -33,11 +33,11 @@ const Anchored = ({
         }
         .root:hover a.icon {
           display: inline-block;
-          mask-image: url("${publicRuntimeConfig.assetPrefix}${publicRuntimeConfig.basePath}/images/icons/link.svg");
+          mask-image: url("${publicRuntimeConfig.basePath}/images/icons/link.svg");
         }
         a.icon:target {
           display: inline-block;
-          mask-image: url("${publicRuntimeConfig.assetPrefix}${publicRuntimeConfig.basePath}/images/icons/target.svg");
+          mask-image: url("${publicRuntimeConfig.basePath}/images/icons/target.svg");
         }
         a.icon span {
           display: none;

@@ -4,8 +4,8 @@ const baseURL =
   process.env.NODE_ENV === "production"
     ? "https://diagrams-technologies.github.io"
     : "http://docs.diagrams.localhost:3000";
-const assetPrefix = baseURL;
 const basePath = process.env.NODE_ENV === "production" ? `/api-doc` : "";
+const assetPrefix = `${baseURL}${basePath}`;
 
 const config = {
   output: 'export',

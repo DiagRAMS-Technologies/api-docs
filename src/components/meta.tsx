@@ -25,11 +25,11 @@ export default function Meta({ name, title, description, image }: Props) {
     typeof image === "string" && image && /^https?:\/\//.test(image)
       ? image
       : image
-      ? publicRuntimeConfig.assetPrefix +
+      ? publicRuntimeConfig.baseURL +
         publicRuntimeConfig.basePath +
         (image.startsWith("/") ? "" : "/") +
         image
-      : publicRuntimeConfig.assetPrefix +
+      : publicRuntimeConfig.baseURL +
         publicRuntimeConfig.basePath +
         "/images/banner.png";
 
