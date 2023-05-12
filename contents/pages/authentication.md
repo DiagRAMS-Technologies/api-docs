@@ -7,11 +7,13 @@ draft: false
 
 # API Auth guide
 
-A text of welcome !
+Welcome to the API Authentication Guide!
+
+We're excited to have you onboard and help you get started with sending data to our API.
 
 ## First task !
 
-To start sending us data, you will need :
+To start sending us data, you will need:
           
 - `ML_PROJECT`
 - `ORGANISATION_ID`
@@ -20,7 +22,7 @@ To start sending us data, you will need :
 
 ## Generate token
 
-You can now generate token with request :
+You can now generate token with request:
           
 ```bash 
 curl -X POST 
@@ -55,6 +57,6 @@ curl -X POST 'https://api.diagrams-technologies.com/v0/oauth2/token'
           
 For renewal, several possible strategies:
           
-- Keep the value of the expires_in field of the token and check it before sending.
-- Wait to encounter a 401 error to renew it and retry the call.
+- Keep the value of the expires_in field of the token and check it before sending,
+- Wait to encounter a 401 error to renew it and retry the call,
 - Decode the JWT token to extract its expiration date before the call.
