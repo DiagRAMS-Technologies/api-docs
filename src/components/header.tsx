@@ -9,7 +9,7 @@ export default function Header(): JSX.Element {
   return (
     <div className="nav-bar">
       <nav>
-        <span className="essai">
+        <span className="bc-image">
           <Image
             src={`${publicRuntimeConfig.basePath}/images/diagrams.png`}
             alt="Picture of the author"
@@ -66,11 +66,18 @@ export default function Header(): JSX.Element {
           grid-row: 1;
         }
 
+        .bc-image{
+          width: 300px;
+          height: 100px;
+          padding: 25px;
+          background-color: white;
+        }
+
         nav {
           background-color: var(--dark);
-          margin: 0 calc((var(--column) * 5));
+          margin: 0 calc((var(--column) * 3.50));
           height: 100%;
-          display: block;
+          display: flex;
           align-items: center;
           padding: 20px;
         }
@@ -82,6 +89,7 @@ export default function Header(): JSX.Element {
           padding-left: 20px;
           padding-right: 20px;
           padding-bottom: 5px;
+          display: block;
           border-color: var(--primary);
         }
 

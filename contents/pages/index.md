@@ -9,7 +9,7 @@ draft: false
 
 Welcome on board!
 
-Wondering what the hell is DiagRAMS? Check out our [corporate website](https://diagrams-technologies.com).
+Wondering what the hell is DiagRAMS? Check out our [corporate website](https://diagrams-technologies.com/en/home/).
 
 If you are new to the DiagRAMS API, you may want a [quick introduction](/authentication) to our API usage.
 
@@ -19,5 +19,3 @@ Also, you can directly check our [API reference](/api-reference) for a more dire
 If you encounter the slightest problem or the slightest inconsistency. Do not hesitate to let us know as soon as possible at this email: [support@diagrams-technologies.com](mailto:support@diagrams-technologies.com?subject=Help+on+DiagRAMS+API).
 We can provide you with all the help you need.
 
-## Developer mailing list
-A day 
