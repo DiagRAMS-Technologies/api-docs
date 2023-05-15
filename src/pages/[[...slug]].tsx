@@ -5,6 +5,7 @@ import { pathJoin, readDirDeep } from "../utils/files";
 import { toASCIIString } from "../utils/ascii";
 import { Layout } from "../layouts/main";
 import ContentBlock from "../components/contentBlock";
+import { insertSummary } from "../utils/summary";
 import type { GetStaticProps, GetStaticPaths } from "next";
 import type { MarkdownRootNode } from "../utils/markdown";
 
@@ -27,6 +28,8 @@ type Params = { slug: string[] };
 type Props = { entry: Entry };
 
 const Page = ({ entry }: Props) => {
+  const contentWithSummary = insertSummary(entry.content);
+
   return (
     <Layout
       title={`${fixText(entry.title)}`}
@@ -34,12 +37,22 @@ const Page = ({ entry }: Props) => {
       image={entry.illustration?.href}
     >
       <ContentBlock>
-        {renderMarkdown({ index: 0 }, entry.content)}
+        {renderMarkdown({ index: 0 }, contentWithSummary)}
         <div className="clear"></div>
       </ContentBlock>
       <style jsx>{`
         .clear {
           clear: both;
+        }
+        a {
+          text-decoration: none;
+        }
+        h2 {
+          text-align: center;
+        }
+        ul {
+          padding: 20px 200px;
+          list-style-type: circle;
         }
       `}</style>
     </Layout>
@@ -71,7 +84,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<Props, Params> = async ({
   params,
 }) => {
-  const path = pathJoin("contents", "pages", ...(params.slug || []));
+  const path = pathJoin("contents", "pages", ...(params?.slug || []));
   let result;
 
   try {
