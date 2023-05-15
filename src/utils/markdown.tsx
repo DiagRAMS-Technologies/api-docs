@@ -42,16 +42,16 @@ export type MarkdownCodeNode = {
 };
 export type MarkdownTextNode = {
   type: "text";
-  value: "string";
+  value: string;
 };
 export type MarkdownBoldNode = {
   type: "bold" | "strong";
-  value: "string";
+  value: string;
   children: MarkdownNode[];
 };
 export type MarkdownEmphasisNode = {
   type: "emphasis";
-  value: "string";
+  value: string;
   children: MarkdownNode[];
 };
 export type MarkdownImlineCodeNode = {
@@ -352,8 +352,8 @@ const elementsMapping: Record<MarkdownNodeType, NodeToElementMapper<any>> = {
   html: htmlMap,
 };
 
-export function parseMarkdown(input: string): MarkdownNode {
-  return unified().use(remarkParse).parse(input) as unknown as MarkdownNode;
+export function parseMarkdown(input: string): MarkdownRootNode {
+  return unified().use(remarkParse).parse(input) as unknown as MarkdownRootNode;
 }
 
 export function renderMarkdown<T extends MappingContext>(
