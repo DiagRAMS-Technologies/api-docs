@@ -73,7 +73,7 @@ export default function Meta({ name, title, description, image }: Props) {
       <meta property="og:locale" content="fr_FR" />
       <meta
         property="og:type"
-        content={router?.pathname === "/actualite" ? "article" : "website"}
+        content={router?.pathname === "/news" ? "article" : "website"}
       />
       <meta property="og:url" content={canonicalURL} />
       <meta property="og:title" content={fullTitle} />
