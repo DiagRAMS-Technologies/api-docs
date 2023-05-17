@@ -13,8 +13,8 @@ export default function Header(): JSX.Element {
           <Image
             src={`${publicRuntimeConfig.basePath}/images/diagrams.png`}
             alt="Picture of the author"
-            width={250}
-            height={50}
+            width={200}
+            height={40}
           />
         </span>
         {[
@@ -60,37 +60,35 @@ export default function Header(): JSX.Element {
       </nav>
       <style jsx>{`
         .nav-bar {
-          background-color: #f7f6f6;
           width: 100%;
           height: 100%;
           grid-row: 1;
         }
 
         .bc-image{
-          width: 300px;
+          width: 250px;
           height: 100px;
           padding: 25px;
           background-color: white;
         }
 
         nav {
-          background-color: var(--dark);
-          margin: 0 calc((var(--column) * 3.50));
+          background-color: #f7f6f6;
+          margin: 0 calc((var(--column) * 4.5));
           height: 100%;
           display: flex;
           align-items: center;
-          padding: 20px;
+          padding: 0 20px;
         }
 
         nav > a {
-          padding-left: var(--gutter);
-          padding-left: var(--gutter);
           border-right: 1px solid;
-          padding-left: 20px;
-          padding-right: 20px;
-          padding-bottom: 5px;
           display: block;
           border-color: var(--primary);
+          background-color: var(--dark);
+          padding: 25px;
+          height:100px;
+          min-width:200px;
         }
 
         .selected {
@@ -103,11 +101,26 @@ export default function Header(): JSX.Element {
           font-size: 20px;
           color: var(--light);
           font-weight: 700;
+          text-align: center;
+          padding-top: 100px;
         }
 
         nav > a:hover {
           color: var(--primary);
         }
+
+        @media screen and (max-width: 1500px) {
+          nav {
+            display: flex;
+            flex-direction: column;
+            margin: 0 calc((var(--column) * 2));
+          }
+          nav a {
+            width: 250px;
+          }
+          nav:last-child{
+            margin-bottom: 15px;
+          }
       `}</style>
     </div>
   );
