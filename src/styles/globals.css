@@ -162,7 +162,7 @@ body,
   padding: 0;
   font-size: var(--mediumFontSize);
   line-height: var(--mediumLineHeight);
-  font-family: var(--contentFont);
+  font-family: 'Montserrat',sans-serif!important;
 }
 
 *,
