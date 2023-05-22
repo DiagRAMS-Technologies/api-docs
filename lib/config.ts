@@ -1,4 +1,3 @@
-import { Settings } from 'luxon';
 import YError from 'yerror';
 
 export const APP_ENVS = ['local', 'staging', 'production'] as const;
@@ -9,7 +8,6 @@ export type AppConfig = {
   applicationVersion: string;
   contentSecurityPolicy: string;
 };
-Settings.throwOnInvalid = true;
 
 const applicationEnv: AppEnv =
   (process.env.NEXT_PUBLIC_APP_ENV as AppEnv) || 'production';

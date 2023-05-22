@@ -1,5 +1,11 @@
-import { dracula, CopyBlock } from "react-code-blocks";
+import { PrismAsync as SyntaxHighlighter } from "react-syntax-highlighter";
+import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { unified } from "unified";
+import { fixText } from "./text";
+import YError from "yerror";
+import { toASCIIString } from "./ascii";
+import { CSS_BREAKPOINT_START_L, CSS_BREAKPOINT_START_M } from "./constants";
+import { parseYouTubeURL } from "./youtube";
 import remarkParse from "remark-parse";
 import Anchor from "../components/a";
 import Anchored from "../components/anchored";
@@ -17,15 +23,8 @@ import Paragraph from "../components/p";
 import UnorderedList from "../components/ul";
 import Strong from "../components/strong";
 import Emphasis from "../components/em";
-import Code from "../components/code";
 import InlineCode from "../components/inlineCode";
 import Cite from "../components/cite";
-import { fixText } from "./text";
-import YError from "yerror";
-import { publicRuntimeConfig } from "./config";
-import { toASCIIString } from "./ascii";
-import { CSS_BREAKPOINT_START_L, CSS_BREAKPOINT_START_M } from "./constants";
-import { parseYouTubeURL } from "./youtube";
 import type { ReactNode } from "react";
 
 export type MarkdownRootNode = {
@@ -193,15 +192,13 @@ const emphasisMap: NodeToElementMapper<MarkdownEmphasisNode> = (
   </Emphasis>
 );
 const codeMap: NodeToElementMapper<MarkdownCodeNode> = (context, node) => (
-  <CopyBlock
+  <SyntaxHighlighter
     key={context.index}
-    text={node.value}
-    language={node.lang}
-    theme={dracula}
-    customStyle={{ fontSize: "calc(var(--mediumFontSize)*0.75)" }}
-    wrapLongLines
-    showLineNumbers={false}
-  />
+    language={'javascript'}
+    style={dracula}
+  >
+    {node.value}
+  </SyntaxHighlighter>
 );
 const inlinecodeMap: NodeToElementMapper<MarkdownCodeNode> = (
   context,

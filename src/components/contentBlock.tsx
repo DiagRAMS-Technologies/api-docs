@@ -14,6 +14,7 @@ export default function ContentBlock({
         .root {
           background-color: var(--light);
           padding: calc(var(--vRythm) * 2) var(--gutter);
+          max-width: 1400px;
         }
         @media screen and (min-width: ${CSS_BREAKPOINT_START_L}) {
           .root {

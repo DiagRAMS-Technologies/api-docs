@@ -86,9 +86,8 @@ export default function Header(): JSX.Element {
           display: block;
           border-color: var(--primary);
           background-color: var(--dark);
-          padding: 25px;
+          padding: 20px 30px;
           height:100px;
-          min-width:200px;
         }
 
         .selected {
@@ -102,7 +101,6 @@ export default function Header(): JSX.Element {
           color: var(--light);
           font-weight: 700;
           text-align: center;
-          padding-top: 100px;
         }
 
         nav > a:hover {
@@ -115,12 +113,15 @@ export default function Header(): JSX.Element {
             flex-direction: column;
             margin: 0 calc((var(--column) * 2));
           }
+
           nav a {
             width: 250px;
           }
+
           nav:last-child{
             margin-bottom: 15px;
           }
+        }
       `}</style>
     </div>
   );
