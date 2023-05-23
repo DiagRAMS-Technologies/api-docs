@@ -6,12 +6,7 @@
     "dev": "next dev",
     "build": "next build && touch out/.nojekyll && echo 'docs.diagrams-technologies.com' > out/CNAME",
     "start": "next start",
-<<<<<<< Updated upstream
     "lint": "next lint"
-=======
-    "lint": "next lint",
-    "export": "next export && touch out/.nojekyll && echo 'https://diagrams-technologies.github.io/api-doc' > out/CNAME"
->>>>>>> Stashed changes
   },
   "dependencies": {
     "@types/node": "^18.15.12",
@@ -29,11 +24,7 @@
     "unified": "^10.1.2",
     "yerror": "^6.2.1"
   },
-<<<<<<< Updated upstream
   "homepage": "https://docs.diagrams-technologies.com",
-=======
-  "homepage": "https://diagrams-technologies.github.io/api-doc",
->>>>>>> Stashed changes
   "devDependencies": {
     "@babel/core": "^7.21.8",
     "@babel/node": "^7.20.7",
