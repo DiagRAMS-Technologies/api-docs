@@ -42,16 +42,16 @@ export type MarkdownCodeNode = {
 };
 export type MarkdownTextNode = {
   type: "text";
-  value: "string";
+  value: string;
 };
 export type MarkdownBoldNode = {
   type: "bold" | "strong";
-  value: "string";
+  value: string;
   children: MarkdownNode[];
 };
 export type MarkdownEmphasisNode = {
   type: "emphasis";
-  value: "string";
+  value: string;
   children: MarkdownNode[];
 };
 export type MarkdownImlineCodeNode = {
@@ -192,13 +192,27 @@ const emphasisMap: NodeToElementMapper<MarkdownEmphasisNode> = (
   </Emphasis>
 );
 const codeMap: NodeToElementMapper<MarkdownCodeNode> = (context, node) => (
-  <SyntaxHighlighter
-    key={context.index}
-    language={'javascript'}
-    style={dracula}
-  >
-    {node.value}
-  </SyntaxHighlighter>
+  <div className="syntax">
+    <SyntaxHighlighter
+      key={context.index}
+      language={'javascript'}
+      style={dracula}
+    >
+      {node.value}
+    </SyntaxHighlighter>
+    <style jsx>{`
+      @media (max-width: 750px){
+        .syntax {
+          width: 350px;
+        }
+      }
+      @media (min-width: 750px){
+        .syntax {
+          width: 700px;
+        }
+      }
+      `}</style>
+</div>
 );
 const inlinecodeMap: NodeToElementMapper<MarkdownCodeNode> = (
   context,
@@ -352,8 +366,8 @@ const elementsMapping: Record<MarkdownNodeType, NodeToElementMapper<any>> = {
   html: htmlMap,
 };
 
-export function parseMarkdown(input: string): MarkdownNode {
-  return unified().use(remarkParse).parse(input) as unknown as MarkdownNode;
+export function parseMarkdown(input: string): MarkdownRootNode {
+  return unified().use(remarkParse).parse(input) as unknown as MarkdownRootNode;
 }
 
 export function renderMarkdown<T extends MappingContext>(
