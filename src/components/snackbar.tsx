@@ -19,6 +19,5 @@ export default function Snackbar({message, type}): JSX.Element{
         }
       `}</style>
       </div>
-      
     )
   }

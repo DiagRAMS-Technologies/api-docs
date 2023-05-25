@@ -42,25 +42,25 @@ const Anchor = ({
     {icon ? <span className="icon" /> : null}
     {children}
     <style jsx>{`
-      :global(a),
-      :global(a):visited {
+      :global(a).root,
+      :global(a).root:visited {
         cursor: pointer;
         text-decoration: none;
         color: var(--primary);
         line-height: var(--mediumLineHeight);
       }
-      :global(a):hover,
-      :global(a):focus {
+      :global(a).root:hover,
+      :global(a).root:focus {
         color: var(--primary);
       }
-      :global(a).first,
-      :global(a).last {
+      :global(a).root.first,
+      :global(a).root.last {
         display: inline-flex;
         flex-direction: row;
         gap: calc(var(--gutter) / 4);
       }
-      :global(a).first span.icon,
-      :global(a).last span.icon {
+      :global(a).root.first span.icon,
+      :global(a).root.last span.icon {
         display: flex;
         height: var(--vRythm);
         width: calc(var(--vRythm) * 0.55);
@@ -71,10 +71,10 @@ const Anchor = ({
         mask-position: left bottom;
         mask-image: url("${publicRuntimeConfig.basePath}/images/icons/arrow-left.svg");
       }
-      :global(a).last {
+      :global(a).root.last {
         flex-direction: row-reverse;
       }
-      :global(a).last span.icon {
+      :global(a).root.last span.icon {
         mask-image: url("${publicRuntimeConfig.basePath}/images/icons/arrow-right.svg");
       }
     `}</style>
