@@ -17,7 +17,10 @@ export function Layout({ children, title, description, image }): JSX.Element {
       {/* <Footer /> */}
       <style jsx>{`
         .root {
-          display: block;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
           background-color: #f7f6f6;
         }
       `}</style>

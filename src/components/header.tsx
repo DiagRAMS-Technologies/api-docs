@@ -13,8 +13,7 @@ export default function Header(): JSX.Element {
           <Image
             src={`${publicRuntimeConfig.basePath}/images/diagrams.png`}
             alt="Picture of the author"
-            width={200}
-            height={40}
+            fill
           />
         </span>
         {[
@@ -40,61 +39,54 @@ export default function Header(): JSX.Element {
           },
         ].map(({ name, path, isHome }, index) => {
           return (
-            <Link key={index} legacyBehavior href={path}>
-              <a
-                className={
-                  (
-                    isHome
-                      ? router.asPath === path
-                      : router.asPath.startsWith(path)
-                  )
-                    ? "selected"
-                    : ""
-                }
-              >
-                <span>{name}</span>
-              </a>
+            <Link
+              key={index}
+              href={path}
+              className={
+                (
+                  isHome
+                    ? router.asPath === path
+                    : router.asPath.startsWith(path)
+                )
+                  ? "selected"
+                  : ""
+              }
+            >
+              <span>{name}</span>
             </Link>
           );
         })}
       </nav>
       <style jsx>{`
         .nav-bar {
-          width: 100%;
-          height: 100%;
-          grid-row: 1;
+          background-color: var(--light);
+          display: flex;
+          justify-content: center;
         }
-
-        .bc-image{
-          width: 250px;
-          height: 100px;
-          padding: 25px;
-          background-color: white;
-        }
-
         nav {
-          background-color: #f7f6f6;
-          margin: 0 calc((var(--column) * 4.5));
-          height: 100%;
+          height: calc(var(--vRythm) * 2);
           display: flex;
           align-items: center;
-          padding: 0 20px;
         }
 
-        nav > a {
+        .bc-image {
+          position: relative;
+          width: calc(calc(var(--column) * 2) + calc(var(--gutter) * 1));
+          height: calc(var(--vRythm) * 2);
+          background-color: white;
+          margin: 0 var(--gutter);
+        }
+        .bc-image :global(img) {
+          object-fit: scale-down;
+        }
+
+        nav > :global(a) {
           border-right: 1px solid;
           display: block;
           border-color: var(--primary);
           background-color: var(--dark);
-          padding: 20px 30px;
-          height:100px;
-        }
-
-        .selected {
-          color: var(--primary);
-        }
-
-        a {
+          line-height: calc(var(--vRythm) * 2);
+          padding: 0 var(--gutter);
           text-decoration: none;
           font-family: "Montserrat", sans-serif !important;
           font-size: 20px;
@@ -103,24 +95,12 @@ export default function Header(): JSX.Element {
           text-align: center;
         }
 
-        nav > a:hover {
-          color: var(--primary);
+        nav > :global(a.selected) {
+          color: var(--grey);
         }
 
-        @media screen and (max-width: 1500px) {
-          nav {
-            display: flex;
-            flex-direction: column;
-            margin: 0 calc((var(--column) * 2));
-          }
-
-          nav a {
-            width: 250px;
-          }
-
-          nav:last-child{
-            margin-bottom: 15px;
-          }
+        nav > :global(a):hover {
+          color: var(--primary);
         }
       `}</style>
     </div>
