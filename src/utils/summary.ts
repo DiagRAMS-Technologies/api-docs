@@ -41,7 +41,7 @@ export function insertSummary(rootNode: MarkdownRootNode): MarkdownRootNode {
   const nodeHeadings = collectNodesByType<MarkdownHeadingNode>(
     rootNode.children,
     "heading"
-  );
+  ).filter((node) => node.depth > 1);
 
   return {
     type: "root",
@@ -52,14 +52,35 @@ export function insertSummary(rootNode: MarkdownRootNode): MarkdownRootNode {
         depth: 2,
         children: [{ type: "text", value: "Summary" }],
       },
-      {
-        type: "list",
-        ordered: false,
-        spread: false,
-        children: nodeHeadings.map<MarkdownListItemNode>((headingNode) => {
+      nodeHeadings.reduce(
+        (itemsStack, headingNode) => {
+          if (headingNode.depth - 1 > itemsStack.length) {
+            const newList = {
+              type: "list",
+              ordered: true,
+              spread: false,
+              children: [],
+            } as MarkdownListNode;
+
+            if (itemsStack[itemsStack.length - 1].children.length) {
+              itemsStack[itemsStack.length - 1].children[0].children.push(
+                newList
+              );
+            } else {
+              itemsStack[itemsStack.length - 1].children.push({
+                type: "listItem",
+                spread: false,
+                children: [newList],
+              } as MarkdownListItemNode);
+            }
+            itemsStack.push(newList);
+          } else if (headingNode.depth - 1 < itemsStack.length) {
+            itemsStack.pop();
+          }
+
           const text = collectMarkdownText(headingNode);
 
-          return {
+          itemsStack[itemsStack.length - 1].children.push({
             type: "listItem",
             spread: false,
             children: [
@@ -69,9 +90,39 @@ export function insertSummary(rootNode: MarkdownRootNode): MarkdownRootNode {
                 children: [{ type: "text", value: text }],
               } as MarkdownLinkNode,
             ],
-          };
-        }),
-      } as MarkdownListNode,
+          } as MarkdownListItemNode);
+
+          return itemsStack;
+        },
+        [
+          {
+            type: "list",
+            ordered: true,
+            spread: false,
+            children: [],
+          } as MarkdownListNode,
+        ]
+      )[0],
+      // {
+      //   type: "list",
+      //   ordered: true,
+      //   spread: false,
+      //   xchildren: nodeHeadings.map<MarkdownListItemNode>((headingNode) => {
+      //     const text = collectMarkdownText(headingNode);
+
+      //     return {
+      //       type: "listItem",
+      //       spread: false,
+      //       children: [
+      //         {
+      //           type: "link",
+      //           url: `#${toASCIIString(text)}`,
+      //           children: [{ type: "text", value: text }],
+      //         } as MarkdownLinkNode,
+      //       ],
+      //     };
+      //   }),
+      // } as MarkdownListNode,
       ...rootNode.children.slice(1),
     ],
   };

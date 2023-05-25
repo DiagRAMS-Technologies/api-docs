@@ -10,6 +10,9 @@ const ListItem = ({
       .root > :global(:first-child:last-child) {
         margin: 0;
       }
+      .root > :global(ol), .root > :global(ul) {
+        margin: 0;
+      }
     `}</style>
   </li>
 );

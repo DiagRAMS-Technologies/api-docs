@@ -23,7 +23,7 @@ const Anchored = ({
           font-weight: bold;
         }
         a.icon {
-          display: none;
+          visibility: hidden;
           width: calc(var(--column) * 0.9);
           height: calc(var(--vRythm) * 0.9);
           background: var(--quaternary);
@@ -32,15 +32,15 @@ const Anchored = ({
           mask-size: calc(var(--vRythm) * 0.65);
         }
         .root:hover a.icon {
-          display: inline-block;
+          visibility: visible;
           mask-image: url("${publicRuntimeConfig.basePath}/images/icons/link.svg");
         }
         a.icon:target {
-          display: inline-block;
+          visibility: visible;
           mask-image: url("${publicRuntimeConfig.basePath}/images/icons/target.svg");
         }
         a.icon span {
-          display: none;
+          visibility: hidden;
         }
       `}</style>
     </span>
