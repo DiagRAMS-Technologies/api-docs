@@ -63,7 +63,7 @@ export function insertSummary(rootNode: MarkdownRootNode): MarkdownRootNode {
             } as MarkdownListNode;
 
             if (itemsStack[itemsStack.length - 1].children.length) {
-              itemsStack[itemsStack.length - 1].children[0].children.push(
+              (itemsStack[itemsStack.length - 1].children[0] as MarkdownListItemNode).children.push(
                 newList
               );
             } else {

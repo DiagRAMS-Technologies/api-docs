@@ -1,15 +1,17 @@
 import React from "react";
-import type SwaggerUI from "swagger-ui-react";
 import "swagger-ui-react/swagger-ui.css";
 import dynamic from "next/dynamic";
+import type SwaggerUI from "swagger-ui-react";
+import { SwaggerUIProps } from "swagger-ui-react";
 
-const DynamicSwagger = dynamic<SwaggerUI>(
-  () => import("swagger-ui-react"),
+const DynamicSwagger = dynamic<SwaggerUIProps>(
+  () => import("swagger-ui-react").then((module) => module.default),
   {
     loading: () => <p>Loading...</p>,
     ssr: false,
   },
 );
+
 
 const TAGS = ["events","images","attachments","sensors","reports","search","anomalies","data","maintenances","factories","organisations","users","auth","trends"]
 

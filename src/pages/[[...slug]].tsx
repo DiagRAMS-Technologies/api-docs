@@ -34,7 +34,7 @@ const Page = ({ entry }: Props) => {
     <Layout
       title={`${fixText(entry.title)}`}
       description={fixText(entry.description)}
-      image={entry.illustration?.href}
+      image={entry.illustration?.href || ''}
     >
       <ContentBlock>
         {renderMarkdown({ index: 0 }, contentWithSummary)}

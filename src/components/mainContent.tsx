@@ -7,7 +7,7 @@ import {
     CSS_BREAKPOINT_START_XL,
   } from "../utils/constants";
   
-  export default function MainContent({ children }) {
+  export default function MainContent({ children }: { children: React.ReactNode }) {
     return (
       <main className="content">
         {children}

@@ -1,4 +1,4 @@
-export default function Snackbar({message, type}): JSX.Element{
+export default function Snackbar({ message, type }: { message: string, type: string }): JSX.Element {
     return (
       <div className={`snackbar ${type}`}>
         <p>{message}</p>
