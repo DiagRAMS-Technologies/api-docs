@@ -54,28 +54,44 @@ export function insertSummary(rootNode: MarkdownRootNode): MarkdownRootNode {
       },
       nodeHeadings.reduce(
         (itemsStack, headingNode) => {
-          if (headingNode.depth - 1 > itemsStack.length) {
-            const newList = {
-              type: "list",
-              ordered: true,
-              spread: false,
-              children: [],
-            } as MarkdownListNode;
+          const deeperHeadingLevel = headingNode.depth - 1 > itemsStack.length;
+          const shallowerHeadingLevel =
+            headingNode.depth - 1 < itemsStack.length;
 
-            if (itemsStack[itemsStack.length - 1].children.length) {
-              (itemsStack[itemsStack.length - 1].children[0] as MarkdownListItemNode).children.push(
-                newList
-              );
-            } else {
-              itemsStack[itemsStack.length - 1].children.push({
-                type: "listItem",
+          if (deeperHeadingLevel) {
+            const levelsToRaise = headingNode.depth - itemsStack.length - 1;
+
+            for (let i = levelsToRaise; i > 0; i--) {
+              const newList = {
+                type: "list",
+                ordered: true,
                 spread: false,
-                children: [newList],
-              } as MarkdownListItemNode);
+                children: [],
+              } as MarkdownListNode;
+              const listItemAlreadyExists =
+                !!itemsStack[itemsStack.length - 1].children.length;
+
+              if (listItemAlreadyExists) {
+                (
+                  itemsStack[itemsStack.length - 1].children[
+                    itemsStack[itemsStack.length - 1].children.length - 1
+                  ] as MarkdownListItemNode
+                ).children.push(newList);
+              } else {
+                itemsStack[itemsStack.length - 1].children.push({
+                  type: "listItem",
+                  spread: false,
+                  children: [newList],
+                } as MarkdownListItemNode);
+              }
+              itemsStack.push(newList);
             }
-            itemsStack.push(newList);
-          } else if (headingNode.depth - 1 < itemsStack.length) {
-            itemsStack.pop();
+          } else if (shallowerHeadingLevel) {
+            const levelsToDrop = itemsStack.length - headingNode.depth + 1;
+
+            for (let i = levelsToDrop; i > 0; i--) {
+              itemsStack.pop();
+            }
           }
 
           const text = collectMarkdownText(headingNode);
@@ -103,26 +119,6 @@ export function insertSummary(rootNode: MarkdownRootNode): MarkdownRootNode {
           } as MarkdownListNode,
         ]
       )[0],
-      // {
-      //   type: "list",
-      //   ordered: true,
-      //   spread: false,
-      //   xchildren: nodeHeadings.map<MarkdownListItemNode>((headingNode) => {
-      //     const text = collectMarkdownText(headingNode);
-
-      //     return {
-      //       type: "listItem",
-      //       spread: false,
-      //       children: [
-      //         {
-      //           type: "link",
-      //           url: `#${toASCIIString(text)}`,
-      //           children: [{ type: "text", value: text }],
-      //         } as MarkdownLinkNode,
-      //       ],
-      //     };
-      //   }),
-      // } as MarkdownListNode,
       ...rootNode.children.slice(1),
     ],
   };
