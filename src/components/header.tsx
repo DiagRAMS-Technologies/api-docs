@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { publicRuntimeConfig } from "../utils/config";
+import { CSS_BREAKPOINT_START_L } from "../utils/constants";
 
 export default function Header(): JSX.Element {
   const router = useRouter();
@@ -62,9 +63,10 @@ export default function Header(): JSX.Element {
           background-color: var(--light);
           display: flex;
           justify-content: center;
+          margin: 0 0 var(--gutter) 0;
         }
+
         nav {
-          height: calc(var(--vRythm) * 2);
           display: flex;
           align-items: center;
         }
@@ -76,6 +78,7 @@ export default function Header(): JSX.Element {
           background-color: white;
           margin: 0 var(--gutter);
         }
+
         .bc-image :global(img) {
           object-fit: scale-down;
         }
@@ -93,14 +96,22 @@ export default function Header(): JSX.Element {
           color: var(--light);
           font-weight: 700;
           text-align: center;
+          align-self: stretch;
         }
 
         nav > :global(a.selected) {
-          color: var(--grey);
+          color: var(--darkgrey);
         }
 
         nav > :global(a):hover {
-          color: var(--primary);
+          color: var(--darkgrey);
+        }
+
+        @media (max-width: ${CSS_BREAKPOINT_START_L}) {
+          nav {
+            flex-direction: column;
+            margin: 0 0 var(--gutter) 0;
+          }
         }
       `}</style>
     </div>
