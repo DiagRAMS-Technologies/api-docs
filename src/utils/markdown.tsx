@@ -201,17 +201,11 @@ const codeMap: NodeToElementMapper<MarkdownCodeNode> = (context, node) => (
       {node.value}
     </SyntaxHighlighter>
     <style jsx>{`
-      @media (max-width: 750px){
-        .syntax {
-          width: 350px;
-        }
+      .syntax{
+        grid: flex;
+        max-width: calc(calc(var(--column) * 10) + calc(var(--gutter) * 5));
       }
-      @media (min-width: 750px){
-        .syntax {
-          width: 700px;
-        }
-      }
-      `}</style>
+    `}</style>
 </div>
 );
 const inlinecodeMap: NodeToElementMapper<MarkdownCodeNode> = (

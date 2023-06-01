@@ -18,7 +18,7 @@ export function Layout({ children, title, description, image } : {children: Reac
       <style jsx>{`
         .root {
           width: 100%;
-          height: 100%;
+          min-height: 100%;
           display: flex;
           flex-direction: column;
           background-color: #f7f6f6;

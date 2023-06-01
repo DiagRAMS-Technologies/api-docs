@@ -13,10 +13,9 @@ import {
         {children}
         <style jsx>{`
           .content {
-            flex: 1;
-            display: flex;
+            display: block;
             width: 100%;
-            padding: var(--vRythm) var(--gutter);
+            padding: 0 var(--gutter) var(--vRythm) var(--gutter);
           }
           @media screen and (max-width: ${CSS_BREAKPOINT_END_S}) {
             .content {
@@ -33,14 +32,14 @@ import {
             .content {
               width: ${CSS_BREAKPOINT_START_L};
               margin: 0 auto;
-              padding: calc(var(--vRythm) * 2) calc(var(gutter) * 2);
+              padding: 0 calc(var(gutter) * 2) calc(var(--vRythm) * 2) calc(var(gutter) * 2);
             }
           }
           @media screen and (min-width: ${CSS_BREAKPOINT_START_XL}) {
             .content {
               width: ${CSS_BREAKPOINT_START_XL};
               margin: 0 auto;
-              padding: calc(var(--vRythm) * 2) calc(var(gutter) * 3);
+              padding: 0 calc(var(gutter) * 3) calc(var(--vRythm) * 2) calc(var(gutter) * 3);
             }
           }
         `}</style>
