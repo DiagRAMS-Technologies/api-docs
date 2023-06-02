@@ -58,6 +58,7 @@ const Anchor = ({
         display: inline-flex;
         flex-direction: row;
         gap: calc(var(--gutter) / 4);
+        align-items: center;
       }
       :global(a).root.first span.icon,
       :global(a).root.last span.icon {

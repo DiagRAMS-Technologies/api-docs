@@ -38,6 +38,11 @@ export default function Header(): JSX.Element {
             path: "/api-reference",
             isHome: false,
           },
+          {
+            name: "News",
+            path: "/news",
+            isHome: false,
+          },
         ].map(({ name, path, isHome }, index) => {
           return (
             <Link
