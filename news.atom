@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <feed xmlns="http://www.w3.org/2005/Atom">    
+    <id>https://docs.diagrams-technologies.com//news</id>
+    <title>Developer news - DiagRAMS</title>
+    <subtitle>Discover the latest technical news from DiagRAMS.</subtitle>
+    <link href="https://docs.diagrams-technologies.com//news.atom" rel="self" type="application/atom+xml" />
+    <link href="https://docs.diagrams-technologies.com//news" rel="alternate" type="text/html" />
+    <updated>2023-05-22T11:00:00.000Z</updated>
+    <entry>
+      <id>https://docs.diagrams-technologies.com//news/Security training</id>
+      <title>Training to cybersecurity</title>
+      <link href="https://docs.diagrams-technologies.com//news/Security training" rel="alternate" type="text/html" />
+      <updated>2023-05-22T11:00:00Z</updated>
+      <published>2023-05-22T11:00:00Z</published>
+      <summary>Our commitment to cybersecurity is a neverending quest and our employees are now more confident on their skills thanks to the ANSII training program.</summary>
+      <author>
+        <name>DiagRAMS</name>
+      </author>
+    </entry>
+    <entry>
+      <id>https://docs.diagrams-technologies.com//news/ChtiJS_23</id>
+      <title>23th ChtiJS in our office!</title>
+      <link href="https://docs.diagrams-technologies.com//news/ChtiJS_23" rel="alternate" type="text/html" />
+      <updated>2022-11-17T16:00:00Z</updated>
+      <published>2022-11-17T16:00:00Z</published>
+      <summary>We were happy to welcome the JavaScript community for its 23th edition.</summary>
+      <author>
+        <name>DiagRAMS</name>
+      </author>
+    </entry>
+  </feed>
+  
