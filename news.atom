@@ -7,9 +7,9 @@
     <link href="https://docs.diagrams-technologies.com//news" rel="alternate" type="text/html" />
     <updated>2023-06-05T11:00:00.000Z</updated>
     <entry>
-      <id>https://docs.diagrams-technologies.com//news/Storing secrets</id>
+      <id>https://docs.diagrams-technologies.com//news/storing-secrets</id>
       <title>Considerations for storing secrets</title>
-      <link href="https://docs.diagrams-technologies.com//news/Storing secrets" rel="alternate" type="text/html" />
+      <link href="https://docs.diagrams-technologies.com//news/storing-secrets" rel="alternate" type="text/html" />
       <updated>2023-06-05T11:00:00Z</updated>
       <published>2023-06-05T11:00:00Z</published>
       <summary>When using the DiagRAMS API you will need to store our application id/secret pair, here are some key principles to keep in mind.</summary>
@@ -18,9 +18,20 @@
       </author>
     </entry>
     <entry>
-      <id>https://docs.diagrams-technologies.com//news/Security training</id>
+      <id>https://docs.diagrams-technologies.com//news/upgrade-methodology</id>
+      <title>API upgrade methodology</title>
+      <link href="https://docs.diagrams-technologies.com//news/upgrade-methodology" rel="alternate" type="text/html" />
+      <updated>2023-06-05T11:00:00Z</updated>
+      <published>2023-06-05T11:00:00Z</published>
+      <summary>We took some time to write down our API upgrade methodology in order to let you know how to embrace our API upgrades.</summary>
+      <author>
+        <name>DiagRAMS</name>
+      </author>
+    </entry>
+    <entry>
+      <id>https://docs.diagrams-technologies.com//news/security-training</id>
       <title>Training to cybersecurity</title>
-      <link href="https://docs.diagrams-technologies.com//news/Security training" rel="alternate" type="text/html" />
+      <link href="https://docs.diagrams-technologies.com//news/security-training" rel="alternate" type="text/html" />
       <updated>2023-05-22T11:00:00Z</updated>
       <published>2023-05-22T11:00:00Z</published>
       <summary>Our commitment to cybersecurity is a neverending quest and our employees are now more confident on their skills thanks to the ANSII training program.</summary>
@@ -29,9 +40,9 @@
       </author>
     </entry>
     <entry>
-      <id>https://docs.diagrams-technologies.com//news/ChtiJS_23</id>
+      <id>https://docs.diagrams-technologies.com//news/chtijs-23</id>
       <title>23th ChtiJS in our office!</title>
-      <link href="https://docs.diagrams-technologies.com//news/ChtiJS_23" rel="alternate" type="text/html" />
+      <link href="https://docs.diagrams-technologies.com//news/chtijs-23" rel="alternate" type="text/html" />
       <updated>2022-11-17T16:00:00Z</updated>
       <published>2022-11-17T16:00:00Z</published>
       <summary>We were happy to welcome the JavaScript community for its 23th edition.</summary>

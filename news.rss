@@ -6,27 +6,34 @@
       <link>https://docs.diagrams-technologies.com//news</link>
       <atom:link href="https://docs.diagrams-technologies.com//news.rss" rel="self" type="application/rss+xml" />
       <lastBuildDate>Mon, 05 Jun 2023 11:00:00 GMT</lastBuildDate>
-      <pubDate>Mon, 05 Jun 2023 13:01:12 GMT</pubDate>
+      <pubDate>Mon, 05 Jun 2023 13:50:28 GMT</pubDate>
       <ttl>1800</ttl>
         <item>
-          <guid isPermaLink="true">https://docs.diagrams-technologies.com//news/Storing secrets</guid>
+          <guid isPermaLink="true">https://docs.diagrams-technologies.com//news/storing-secrets</guid>
           <title>Considerations for storing secrets</title>
           <description>When using the DiagRAMS API you will need to store our application id/secret pair, here are some key principles to keep in mind.</description>
-          <link>https://docs.diagrams-technologies.com//news/Storing secrets</link>
+          <link>https://docs.diagrams-technologies.com//news/storing-secrets</link>
           <pubDate>Mon, 05 Jun 2023 11:00:00 GMT</pubDate>
         </item>
         <item>
-          <guid isPermaLink="true">https://docs.diagrams-technologies.com//news/Security training</guid>
+          <guid isPermaLink="true">https://docs.diagrams-technologies.com//news/upgrade-methodology</guid>
+          <title>API upgrade methodology</title>
+          <description>We took some time to write down our API upgrade methodology in order to let you know how to embrace our API upgrades.</description>
+          <link>https://docs.diagrams-technologies.com//news/upgrade-methodology</link>
+          <pubDate>Mon, 05 Jun 2023 11:00:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid isPermaLink="true">https://docs.diagrams-technologies.com//news/security-training</guid>
           <title>Training to cybersecurity</title>
           <description>Our commitment to cybersecurity is a neverending quest and our employees are now more confident on their skills thanks to the ANSII training program.</description>
-          <link>https://docs.diagrams-technologies.com//news/Security training</link>
+          <link>https://docs.diagrams-technologies.com//news/security-training</link>
           <pubDate>Mon, 22 May 2023 11:00:00 GMT</pubDate>
         </item>
         <item>
-          <guid isPermaLink="true">https://docs.diagrams-technologies.com//news/ChtiJS_23</guid>
+          <guid isPermaLink="true">https://docs.diagrams-technologies.com//news/chtijs-23</guid>
           <title>23th ChtiJS in our office!</title>
           <description>We were happy to welcome the JavaScript community for its 23th edition.</description>
-          <link>https://docs.diagrams-technologies.com//news/ChtiJS_23</link>
+          <link>https://docs.diagrams-technologies.com//news/chtijs-23</link>
           <pubDate>Thu, 17 Nov 2022 16:00:00 GMT</pubDate>
         </item>
     </channel>
