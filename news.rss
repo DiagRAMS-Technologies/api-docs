@@ -5,9 +5,16 @@
       <description>Discover the latest technical news from DiagRAMS.</description>
       <link>https://docs.diagrams-technologies.com//news</link>
       <atom:link href="https://docs.diagrams-technologies.com//news.rss" rel="self" type="application/rss+xml" />
-      <lastBuildDate>Mon, 22 May 2023 11:00:00 GMT</lastBuildDate>
-      <pubDate>Fri, 02 Jun 2023 14:43:38 GMT</pubDate>
+      <lastBuildDate>Mon, 05 Jun 2023 11:00:00 GMT</lastBuildDate>
+      <pubDate>Mon, 05 Jun 2023 13:01:12 GMT</pubDate>
       <ttl>1800</ttl>
+        <item>
+          <guid isPermaLink="true">https://docs.diagrams-technologies.com//news/Storing secrets</guid>
+          <title>Considerations for storing secrets</title>
+          <description>When using the DiagRAMS API you will need to store our application id/secret pair, here are some key principles to keep in mind.</description>
+          <link>https://docs.diagrams-technologies.com//news/Storing secrets</link>
+          <pubDate>Mon, 05 Jun 2023 11:00:00 GMT</pubDate>
+        </item>
         <item>
           <guid isPermaLink="true">https://docs.diagrams-technologies.com//news/Security training</guid>
           <title>Training to cybersecurity</title>
