@@ -44,30 +44,8 @@ import {
           orientation and build boxes that respect the
           vertical rythm and horizontal dimensions of the
           layout avoiding layout shifting */
+          
           @media screen and (min-width: ${CSS_BREAKPOINT_START_M}) {
-            .root.left {
-              float: left;
-              margin: 0 var(--gutter) var(--vRythm) 0;
-            }
-            .root.right {
-              float: right;
-              margin: 0 0 var(--vRythm) var(--gutter);
-            }
-            .root.left,
-            .root.right {
-              width: var(--block);
-              height: calc(var(--vRythm) * 10);
-            }
-            .root.left.landscape,
-            .root.right.landscape {
-              height: calc(var(--vRythm) * 6);
-            }
-            .root.left.portrait,
-            .root.right.portrait {
-              height: calc(var(--vRythm) * 14);
-            }
-          }
-          @media screen and (min-width: ${CSS_BREAKPOINT_START_L}) {
             .root.left,
             .root.right {
               width: calc(calc(var(--column) * 4) + calc(var(--gutter) * 3));

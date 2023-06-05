@@ -56,7 +56,7 @@ const Items = <T extends BaseContentPageMetadata>({
             margin: 0 !important;
           }
           .entry_item {
-            padding: var(--vRythm) 0;
+            padding: 0 0 var(--vRythm) 0;
             border-bottom: var(--border) solid var(--secondary);
           }
           .entry_item:first-child {
@@ -64,7 +64,6 @@ const Items = <T extends BaseContentPageMetadata>({
           }
           .entry_item:last-child {
             border: none;
-            padding: var(--vRythm) 0 0 0;
           }
 
           @media screen and (min-width: ${CSS_BREAKPOINT_START_L}) {

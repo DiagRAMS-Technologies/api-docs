@@ -29,10 +29,11 @@ git clone git@github.com:DiagRAMS-Technologies/api-docs.git
 
 ## Getting Started
 
-Once ready, just install the dependencies and compile the project:
+Once ready, just install the dependencies, husky and compile the project:
 
 ```sh
 npm i
+npm run prepare
 npm run build
 ```
 

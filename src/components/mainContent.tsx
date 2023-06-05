@@ -24,7 +24,6 @@ import {
           }
           @media screen and (min-width: ${CSS_BREAKPOINT_START_M}) and (max-width: ${CSS_BREAKPOINT_END_M}) {
             .content {
-              padding: 0 var(--gutter);
               justify-content: center;
             }
           }

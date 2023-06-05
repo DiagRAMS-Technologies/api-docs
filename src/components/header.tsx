@@ -15,6 +15,7 @@ export default function Header(): JSX.Element {
             src={`${publicRuntimeConfig.basePath}/images/diagrams.png`}
             alt="Picture of the author"
             fill
+            priority={true}
           />
         </span>
         {[

@@ -91,7 +91,6 @@ const NewsEntries = ({
         gap: var(--gutter);
         align-items: center;
         justify-content: center;
-        padding: var(--vRythm) 0 0 0;
       }
       @media print {
         .pagination {
