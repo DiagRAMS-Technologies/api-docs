@@ -37,6 +37,12 @@ npm run prepare
 npm run build
 ```
 
+Then, run the development server:
+
+```bash
+npm run dev
+```
+
 You can then test your whole build:
 
 ```sh
@@ -48,13 +54,6 @@ Or you can just run the unit tests:
 ```sh
 npm run jest
 npm run jest -- --watch
-```
-
-
-First, run the development server:
-
-```bash
-npm run dev
 ```
 
 Open [http://docs.diagrams.localhost:3000](http://docs.diagrams.localhost:3000)
