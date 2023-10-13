@@ -1,5 +1,5 @@
 ---
-title: Authentification
+title: Authentication
 description: Discover how to authenticate with our API
 date: "2023-04-20T14:15:47.659Z"
 draft: false
@@ -11,14 +11,14 @@ Welcome to the API Authentication Guide!
 
 We're excited to have you onboard and help you get started with sending data to our API.
 
-## First task !
+## First task!
 
-To start sending us data, you will need the following informations, [please contact us](mailto:support@diagrams-technologies.com?subject=application+credentials+request) if you didn't get them:
+To start sending us data, you will need the following information, [please contact us](mailto:support@diagrams-technologies.com?subject=application+credentials+request) if you didn't get them:
 
 - `ML_PROJECT`: the code of the anomaly detection project we created for you,
 - `ORGANISATION_ID`: the organisation id of your company in our systems,
 - `APPLICATION_ID`: the id of the application we created for you,
-- `APPLICATION_SECRET`: a unique string to keep secret that authentifies you.
+- `APPLICATION_SECRET`: a unique string to keep secret that authenticates you.
 
 ## Generate token
 
@@ -31,7 +31,7 @@ curl -X POST
 -H'Content-Type: application/x-www-form-urlencoded' --data-binary 'grant_type=client_credentials'
 ```
 
-And it's the result of the request.
+And here's the result of the request.
 
 ```json
 {
@@ -47,7 +47,7 @@ And it's the result of the request.
 
 ## Validity token
 
-The token is only valid for a certain duration (which can change depending on the load), after which it will have to be renewed by creating a new token or by renewing the previous one thanks to the refresh_token associated with it:
+The token is only valid for a certain duration (which can change depending on the load), after which it will have to be renewed by creating a new token or by renewing the previous one thanks to the `refresh_token` associated with it:
 
 ```bash
 curl -X POST 'https://api.diagrams-technologies.com/v0/oauth2/token'
@@ -57,6 +57,6 @@ curl -X POST 'https://api.diagrams-technologies.com/v0/oauth2/token'
 
 For renewal, several possible strategies:
 
-- Keep the value of the expires_in field of the token and check it before sending,
-- Wait to encounter a 401 error to renew it and retry the call,
+- Keep the value of the `expires_in` field of the token and check it before sending,
+- Wait until you encounter a 401 error to renew it and retry the call,
 - Decode the JWT token to extract its expiration date before the call.

@@ -19,7 +19,7 @@ In either push and pull mode, we will first need to create an `ML_PROJECT` code.
 
 ## Push mode through our HTTPS API
 
-The data push endpoint allows you to send us your data. You can do so by calling our API this way (replace the uppercased string by their values):
+The data push endpoint allows you to send us your data. You can do so by calling our API this way (replace the uppercase string by their values):
 
 ```sh
 curl -X "POST"
@@ -32,8 +32,8 @@ curl -X "POST"
 In this call, it suffices to provide us with a list of triples containing:
 
 - a **sensorId**: allowing to uniquely identify a sensor thanks to a character string,
-- an optional **valueName** field: corresponding to a value associated with the sensor for a specific variable (by default &quot;none&quot;), it is useful for example to indicate the x/y/z axes of an accelerometer. This field can only contain lowercase letters, numbers or an underscore (\_),
-- A **date**: indicating the UTC date of the reading in ISO format (UTC => universal time),
+- an optional **valueName** field: corresponding to a value associated with the sensor for a specific variable (by default &quot;none&quot;), it is useful for example to indicate the x/y/z axes of an accelerometer. This field can only contain letters (lowercase and uppercase), numbers or underscores (\_),
+- a **date**: indicating the UTC date of the reading in ISO format (UTC => universal time),
 - a **value**: corresponding to its value at this time, this value must imperatively be a number (a value like **value: '3.14'** will be refused, use **value: 3.14** instead),
 
 **Warning**: the pair sensorId/valueName must be unique for each sensor.
@@ -42,7 +42,7 @@ Once in production, these names must not change without prior consultation with 
 
 ## Pull mode
 
-We can also retrieve data from your API. In this case, we will regurlarly call your API for new data for a givent time frame.
+We can also retrieve data from your API. In this case, we will regularly call your API for new data for a given time frame.
 
 **Warning**: if you take this solution, a huge overload can be observed, depending on how frequently we reach your API.
 
@@ -50,34 +50,34 @@ We already support a few APIs available in the market:
 
 ### Aveva
 
-To use our [Aveva](https://docs.aveva.com/) data bridge, we will need the following informations:
+To use our [Aveva](https://docs.aveva.com/) data bridge, we will need the following information:
 
-- the api base URL,
+- the API base URL,
 - an API username,
 - an API password.
 
 ### IFM Moneo
 
-To use our [IFM Moneo](https://www.ifm.com/gb/en) data bridge, we will need the following informations:
+To use our [IFM Moneo](https://www.ifm.com/gb/en) data bridge, we will need the following information:
 
-- the api base URL,
+- the API base URL,
 - an API client id,
 - an API secret.
 
 ### MindSphere
 
-To use our [MindSphere](https://documentation.mindsphere.io/MindSphere/index.html) data bridge, we will need the following informations:
+To use our [MindSphere](https://documentation.mindsphere.io/MindSphere/index.html) data bridge, we will need the following information:
 
-- the api base URL,
+- the API base URL,
 - the auth server base URL,
 - an API client id,
 - an API secret.
 
 ### Osisoft PI
 
-To use our [OsisoftPI](https://www.aveva.com/en/products/aveva-pi-system/) data bridge, we will need the following informations:
+To use our [OsisoftPI](https://www.aveva.com/en/products/aveva-pi-system/) data bridge, we will need the following information:
 
-- the api base URL,
+- the API base URL,
 - an API client id,
 - an API secret.
 
