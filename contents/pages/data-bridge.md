@@ -32,7 +32,7 @@ curl -X "POST"
 In this call, it suffices to provide us with a list of triples containing:
 
 - a **sensorId**: allowing to uniquely identify a sensor thanks to a character string,
-- an optional **valueName** field: corresponding to a value associated with the sensor for a specific variable (by default &quot;none&quot;), it is useful for example to indicate the x/y/z axes of an accelerometer. This field can only contain lowercase letters, numbers or an underscore (\_),
+- an optional **valueName** field: corresponding to a value associated with the sensor for a specific variable (by default &quot;none&quot;), it is useful for example to indicate the x/y/z axes of an accelerometer. This field can only contain letters (lowercase and uppercase), numbers or underscores (\_),
 - a **date**: indicating the UTC date of the reading in ISO format (UTC => universal time),
 - a **value**: corresponding to its value at this time, this value must imperatively be a number (a value like **value: '3.14'** will be refused, use **value: 3.14** instead),
 
