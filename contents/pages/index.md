@@ -13,7 +13,7 @@ Wondering what the hell is DiagRAMS? Check out our [corporate website](https://d
 
 If you are new to the DiagRAMS API, you may want a [quick introduction](/authentication) to our API usage.
 
-Also, you can directly check our [API reference](/api-reference) for a more direct appraoch.
+Also, you can directly check our [API reference](/api-reference) for a more direct approach.
 
 If you want test, debug, and interact with API. You can download the open-source software [Insomnia](https://insomnia.rest/download)
 
