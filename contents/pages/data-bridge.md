@@ -25,7 +25,7 @@ The data push endpoint allows you to send us your data. You can do so by calling
 curl -X "POST"
     -H "Authorization: bearer $ACCESS_TOKEN"
     "https://api.diagrams-technologies.com/v0/organisations/$ORGANISATION_ID/data/$ML_PROJECT"
-    -H -H "Content-Type: application/json"
+    -H "Content-Type: application/json"
     -d "[{\"sensorId\":\"1\",\"date\":\"2020-01-01T08:03:51.000Z\",\"value\":19.9},{\"sensorId\":\"2\",\"date\":\"2020-01-01T08:03:51.000Z\",\"value\":0},{\"sensorId\":\"3\",\"date\":\"2020-01-01T08:03:51.000Z\",\"value\":\"1\"}]"
 ```
 
