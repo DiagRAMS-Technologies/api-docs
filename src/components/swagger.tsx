@@ -13,7 +13,7 @@ const DynamicSwagger = dynamic<SwaggerUIProps>(
 );
 
 
-const TAGS = ["events","images","attachments","sensors","reports","search","anomalies","data","maintenances","factories","organisations","users","auth","trends"]
+const TAGS = ["events","images","attachments","sensors","reports","search","anomalies","data","maintenances","factories","organisations","users","auth","trends","applications"]
 
 const Swagger = () => {
   let url_api = "https://api.diagrams-technologies.dev/v0/openAPI?mutedParameters=X-APP-Version,X-SDK-Version,X-API-Version\n"
