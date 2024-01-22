@@ -35,6 +35,7 @@ In this call, it suffices to provide us with a list of triples containing:
 - an optional **valueName** field: corresponding to a value associated with the sensor for a specific variable (by default &quot;none&quot;), it is useful for example to indicate the x/y/z axes of an accelerometer. This field can only contain letters (lowercase and uppercase), numbers or underscores (\_),
 - a **date**: indicating the UTC date of the reading in ISO format (UTC => universal time),
 - a **value**: corresponding to its value at this time, this value must imperatively be a number (a value like **value: '3.14'** will be refused, use **value: 3.14** instead),
+- an optional **labels** field: for data tagging purposes, enabling specific tags or categories to be assigned to associated data, making it easier to organize, classify and further process.
 
 **Warning**: the pair sensorId/valueName must be unique for each sensor.
 
