@@ -5,7 +5,7 @@ const Heading1 = ({
   className,
   ...props
 }: { children: React.ReactNode } & HTMLAttributes<HTMLElement>) => (
-  <h1 className={`root${className ? ' ' + className : ""}`} {...props}>
+  <h1 className={`root${className ? " " + className : ""}`} {...props}>
     {children}
     <style jsx>{`
       .root {

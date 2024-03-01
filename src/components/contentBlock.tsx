@@ -1,4 +1,7 @@
-import { CSS_BREAKPOINT_START_L, CSS_BREAKPOINT_START_XL } from "../utils/constants";
+import {
+  CSS_BREAKPOINT_START_L,
+  CSS_BREAKPOINT_START_XL,
+} from "../utils/constants";
 
 export default function ContentBlock({
   children,

@@ -13,7 +13,9 @@ export default NewsEntries;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const baseProps = entriesToBaseListingMetadata(
-    await readEntries<NewsFrontmatterMetadata>(pathJoin(".", "contents", "news"))
+    await readEntries<NewsFrontmatterMetadata>(
+      pathJoin(".", "contents", "news")
+    )
   );
 
   // WARNING: This is not a nice way to generate the news feeds

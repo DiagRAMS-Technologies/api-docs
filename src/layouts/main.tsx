@@ -3,7 +3,17 @@ import Meta from "../components/meta";
 import Header from "../components/header";
 import MainContent from "../components/mainContent";
 
-export function Layout({ children, title, description, image } : {children: React.ReactNode, title: string, description: string, image: string}): JSX.Element {
+export function Layout({
+  children,
+  title,
+  description,
+  image,
+}: {
+  children: React.ReactNode;
+  title: string;
+  description: string;
+  image: string;
+}): JSX.Element {
   return (
     <div className="root">
       <Meta

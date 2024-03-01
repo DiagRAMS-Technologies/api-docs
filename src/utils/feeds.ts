@@ -1,26 +1,26 @@
 export type FeedDescription = {
-    sourceURL: string;
-    title: string;
-    description: string;
-    url: string;
-    updatedAt: string;
-    builtAt: string;
-  };
-  
-  export type FeedItem = {
-    title: string;
-    description: string;
-    url: string;
-    author: { name: string };
-    updatedAt: string;
-    publishedAt: string;
-  };
-  
-  export async function generateAtomFeed(
-    informations: FeedDescription,
-    items: FeedItem[]
-  ) {
-    return `<?xml version="1.0" encoding="utf-8"?>
+  sourceURL: string;
+  title: string;
+  description: string;
+  url: string;
+  updatedAt: string;
+  builtAt: string;
+};
+
+export type FeedItem = {
+  title: string;
+  description: string;
+  url: string;
+  author: { name: string };
+  updatedAt: string;
+  publishedAt: string;
+};
+
+export async function generateAtomFeed(
+  informations: FeedDescription,
+  items: FeedItem[]
+) {
+  return `<?xml version="1.0" encoding="utf-8"?>
   <feed xmlns="http://www.w3.org/2005/Atom">    
     <id>${xmlEscape(informations.sourceURL)}</id>
     <title>${xmlEscape(informations.title)}</title>
@@ -32,8 +32,8 @@ export type FeedDescription = {
       informations.sourceURL
     )}" rel="alternate" type="text/html" />
     <updated>${xmlEscape(informations.updatedAt)}</updated>${items
-      .map(
-        (item) => `
+    .map(
+      (item) => `
     <entry>
       <id>${xmlEscape(item.url)}</id>
       <title>${xmlEscape(item.title)}</title>
@@ -45,17 +45,17 @@ export type FeedDescription = {
         <name>${xmlEscape(item.author.name)}</name>
       </author>
     </entry>`
-      )
-      .join('')}
+    )
+    .join("")}
   </feed>
   `;
-  }
-  
-  export async function generateRSSFeed(
-    informations: FeedDescription,
-    items: FeedItem[]
-  ) {
-    return `<?xml version="1.0" encoding="UTF-8" ?>
+}
+
+export async function generateRSSFeed(
+  informations: FeedDescription,
+  items: FeedItem[]
+) {
+  return `<?xml version="1.0" encoding="UTF-8" ?>
   <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
       <title>${xmlEscape(informations.title)}</title>
@@ -83,16 +83,16 @@ export type FeedDescription = {
           )}</pubDate>
         </item>`
         )
-        .join('')}
+        .join("")}
     </channel>
   </rss>`;
-  }
-  
-  function xmlEscape(str: string): string {
-    return str
-      .replace(/&/g, '&amp;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&apos;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;');
-  }
+}
+
+function xmlEscape(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}

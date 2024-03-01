@@ -15,12 +15,12 @@ export type Position = {
   y: number;
 };
 export type VerticalAnchor = {
-  side: typeof VERTICAL_SIDE[number];
-  alignment: typeof VERTICAL_ALIGNMENT[number];
+  side: (typeof VERTICAL_SIDE)[number];
+  alignment: (typeof VERTICAL_ALIGNMENT)[number];
 };
 export type HorizontalAnchor = {
-  side: typeof HORIZONTAL_SIDE[number];
-  alignment: typeof HORIZONTAL_ALIGNMENT[number];
+  side: (typeof HORIZONTAL_SIDE)[number];
+  alignment: (typeof HORIZONTAL_ALIGNMENT)[number];
 };
 export type ElementAnchor = VerticalAnchor | HorizontalAnchor;
 
@@ -182,9 +182,11 @@ export default function useRelativePosition(
         const baseLeftSpace = baseElementDimensions.x - (parentRect?.left || 0);
         const baseTopSpace = baseElementDimensions.y - (parentRect?.top || 0);
         const baseRightSpace =
-          (parentRect?.width || 0) - (baseLeftSpace + baseElementDimensions.width);
+          (parentRect?.width || 0) -
+          (baseLeftSpace + baseElementDimensions.width);
         const baseBottomSpace =
-          (parentRect?.height || 0) - (baseTopSpace + baseElementDimensions.height);
+          (parentRect?.height || 0) -
+          (baseTopSpace + baseElementDimensions.height);
         const leftSpace =
           baseLeftSpace + baseElementDimensions.width - baseAnchorTranslation.x;
         const rightSpace =
