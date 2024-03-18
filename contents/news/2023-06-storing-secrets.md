@@ -21,11 +21,11 @@ Environment variables are a common way to store application credentials outside 
 
 ## Limit access to credentials
 
-Grant access to application credentials only to the right people (least privilege principe).
+Grant access to application credentials only to the right people (least privilege principle).
 
 ## Use secrets management solutions
 
-Secrets management solutions, such as AWS Secrets Manager, Terraform Vault, provide advanced functionality to securely store and manage application credentials. They provide mechanisms for encryption, auditing, and automatic secrets rotation. By using these solutions, you can centralize the credentials management and reduce risks related to their storage.
+Secrets management solutions, such as AWS Secrets Manager, Terraform Vault, provide advanced functionalities to securely store and manage application credentials. They provide mechanisms for encryption, auditing, and automatic secrets rotation. By using these solutions, you can centralize the credentials management and reduce risks related to their storage.
 
 ## Encrypt Application Secrets
 
@@ -47,8 +47,8 @@ gpg --list-secret-keys --keyid-format=long
 gpg --export your_acces_key | base64 
 ```
 
-There are also free online platforms that specialize in trading secrets but we do not recommend it. If you really need to use it, do not share the APPLICATION_SECRET and APPLICATION_ID in the same message and avoid any reference to the DiagRAMS API.
+There are also free online platforms that specialize in trading secrets, but we do not recommend it. If you really need to use it, do not share the APPLICATION_SECRET and APPLICATION_ID in the same message and avoid any reference to the DiagRAMS API.
 
 ## Secret stolen?
 
-If you think your secret is comprimized for any reason, please [inform us](support@diagrams-technologies.com) as soon as possible. We will instantly disable it and provide your with new credentials.
+If you think your secret is compromised for any reason, please [inform us](support@diagrams-technologies.com) as soon as possible. We will instantly disable it and provide you with new credentials.

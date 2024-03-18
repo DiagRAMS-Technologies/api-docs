@@ -9,11 +9,11 @@ draft: false
 
 Welcome to the API Authentication Guide!
 
-We're excited to have you onboard and help you get started with sending data to our API.
+We're excited to have you on board and help you get started with sending data to our API.
 
 ## First task!
 
-To start sending us data, you will need the following information, [please contact us](mailto:support@diagrams-technologies.com?subject=application+credentials+request) if you didn't get them:
+To start sending us data, you will need the following information, [please contact us](mailto:support@diagrams-technologies.com?subject=Application%20credentials%20request) if you didn't get them:
 
 - `ML_PROJECT`: the code of the anomaly detection project we created for you,
 - `ORGANISATION_ID`: the organisation id of your company in our systems,
@@ -22,13 +22,13 @@ To start sending us data, you will need the following information, [please conta
 
 ## Generate token
 
-You can now generate token with request:
+You can now generate a token with this request:
 
-```bash
-curl -X POST
-'https://api.diagrams-technologies.com/v0/oauth2token'
--u"APPLICATION_ID:APPLICATION_SECRET"
--H'Content-Type: application/x-www-form-urlencoded' --data-binary 'grant_type=client_credentials'
+```sh
+curl -X POST 'https://api.diagrams-technologies.com/v0/oauth2/token' \
+-u"APPLICATION_ID:APPLICATION_SECRET" \
+-H'Content-Type: application/x-www-form-urlencoded' \
+--data-binary 'grant_type=client_credentials'
 ```
 
 And here's the result of the request.
@@ -49,10 +49,10 @@ And here's the result of the request.
 
 The token is only valid for a certain duration (which can change depending on the load), after which it will have to be renewed by creating a new token or by renewing the previous one thanks to the `refresh_token` associated with it:
 
-```bash
-curl -X POST 'https://api.diagrams-technologies.com/v0/oauth2/token'
--H'Content-Type: application/x-www-form-urlencoded' --data-binary 'grant_type=refresh_token&scope=data&refresh_token=refresh_token_encoded'
--u"APPLICATION_ID:APPLICATION_SECRET"
+```sh
+curl -X POST 'https://api.diagrams-technologies.com/v0/oauth2/token' \
+-H'Content-Type: application/x-www-form-urlencoded' \
+--data-binary 'grant_type=refresh_token&scope=data&refresh_token=refresh_token_encoded' \
 ```
 
 For renewal, several possible strategies:
