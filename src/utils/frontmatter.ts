@@ -1,6 +1,6 @@
-import fm from 'front-matter';
-import { pathJoin, readDir, readFile } from './files';
-import type { FrontMatterResult } from 'front-matter';
+import fm from "front-matter";
+import { pathJoin, readDir, readFile } from "./files";
+import type { FrontMatterResult } from "front-matter";
 
 export async function readEntry<T>(
   filePath: string

@@ -55,7 +55,8 @@ export function insertSummary(rootNode: MarkdownRootNode): MarkdownRootNode {
         },
         nodeHeadings.reduce(
           (itemsStack, headingNode) => {
-            const deeperHeadingLevel = headingNode.depth - 1 > itemsStack.length;
+            const deeperHeadingLevel =
+              headingNode.depth - 1 > itemsStack.length;
             const shallowerHeadingLevel =
               headingNode.depth - 1 < itemsStack.length;
 
@@ -124,6 +125,6 @@ export function insertSummary(rootNode: MarkdownRootNode): MarkdownRootNode {
       ],
     };
   else {
-    return rootNode
+    return rootNode;
   }
 }

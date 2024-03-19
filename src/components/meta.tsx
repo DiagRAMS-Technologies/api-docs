@@ -18,9 +18,7 @@ export default function Meta({ name, title, description, image }: Props) {
   const router = useRouter();
   const fullTitle = `${title ? `${title} - ` : ""}${name}`;
   const canonicalURL =
-    publicRuntimeConfig.baseURL +
-    publicRuntimeConfig.basePath +
-    router?.asPath;
+    publicRuntimeConfig.baseURL + publicRuntimeConfig.basePath + router?.asPath;
   const imageURL =
     typeof image === "string" && image && /^https?:\/\//.test(image)
       ? image

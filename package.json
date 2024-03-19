@@ -6,10 +6,14 @@
     "dev": "next dev",
     "build": "next build && touch out/.nojekyll && echo 'docs.diagrams-technologies.com' > out/CNAME",
     "jest": "jest",
-    "lint": "next lint",
-    "prepare": "husky install",
+    "type-check": "tsc --pretty --noEmit",
+    "format": "prettier --write **/*.{ts,tsx,css,scss}",
+    "lint": "eslint . --ext ts --ext tsx --ext js",
+    "prettier": "prettier --write",
+    "pre-commit": "lint-staged && npm run test && npm run type-check && npm run format",
+    "prepare": "husky install || echo 'Running in production mode.'",
     "start": "next start",
-    "test": "jest",
+    "test": "npm run jest",
     "test:ci": "jest --ci",
     "test:watch": "jest --watch"
   },
@@ -20,6 +24,7 @@
     "front-matter": "^4.0.2",
     "glob": "^10.2.6",
     "inline-style-prefixer": "^7.0.0",
+    "lint-staged": "^15.2.2",
     "next": "^13.5.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -28,6 +33,12 @@
     "swagger-ui-react": "^4.18.3",
     "unified": "^10.1.2",
     "yerror": "^6.2.1"
+  },
+  "lint-staged": {
+    "*.@(ts|tsx)": [
+      "npm run lint",
+      "npm run format"
+    ]
   },
   "homepage": "https://docs.diagrams-technologies.com",
   "devDependencies": {
