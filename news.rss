@@ -6,7 +6,7 @@
       <link>https://docs.diagrams-technologies.com//news</link>
       <atom:link href="https://docs.diagrams-technologies.com//news.rss" rel="self" type="application/rss+xml" />
       <lastBuildDate>Mon, 05 Jun 2023 11:00:00 GMT</lastBuildDate>
-      <pubDate>Tue, 23 Jan 2024 09:26:45 GMT</pubDate>
+      <pubDate>Wed, 20 Mar 2024 13:09:25 GMT</pubDate>
       <ttl>1800</ttl>
         <item>
           <guid isPermaLink="true">https://docs.diagrams-technologies.com//news/storing-secrets</guid>
@@ -25,14 +25,14 @@
         <item>
           <guid isPermaLink="true">https://docs.diagrams-technologies.com//news/security-training</guid>
           <title>Training to cybersecurity</title>
-          <description>Our commitment to cybersecurity is a neverending quest and our employees are now more confident on their skills thanks to the ANSII training program.</description>
+          <description>Our commitment to cybersecurity is a never ending quest and our employees are now more confident on their skills thanks to the ANSSI training program.</description>
           <link>https://docs.diagrams-technologies.com//news/security-training</link>
           <pubDate>Mon, 22 May 2023 11:00:00 GMT</pubDate>
         </item>
         <item>
           <guid isPermaLink="true">https://docs.diagrams-technologies.com//news/chtijs-23</guid>
-          <title>23th ChtiJS in our office!</title>
-          <description>We were happy to welcome the JavaScript community for its 23th edition.</description>
+          <title>23rd ChtiJS in our office!</title>
+          <description>We were happy to welcome the JavaScript community for its 23rd edition.</description>
           <link>https://docs.diagrams-technologies.com//news/chtijs-23</link>
           <pubDate>Thu, 17 Nov 2022 16:00:00 GMT</pubDate>
         </item>
