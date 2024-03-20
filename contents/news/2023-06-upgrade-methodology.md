@@ -11,13 +11,13 @@ illustration:
 
 # API upgrade methodology
 
-For our API versioning we are relying on [semantic versioning](https://semver.org/). As long as we do not upgrade the major version, any changes we make on the API have to be backward compatible.
+For our API versioning, we are relying on [semantic versioning](https://semver.org/). As long as we do not upgrade the major version, any changes we make on the API have to be backward compatible.
 
 If you hit any breaking change during a minor or patch update, feel free [to warn us](mailto:support@diagrams-technologies.com), we will take care to fix the issue.
 
-Othewise, for major changes, we will warn you 6 months before the change in order to let you prepare your codebase. We will try to make the changes the least annoying and always take backward compatibility for first approach.
+Otherwise, for major changes, we will warn you 6 months before the change in order to let you prepare your codebase. We will try to make the changes the least annoying and always take backward compatibility for first approach.
 
-We may also maintain old APIs, whenever possible, in order to let you the chance to change your API clients on the fly at your own rythm.
+We may also maintain old APIs, whenever possible, in order to let you the chance to change your API clients on the fly at your own rhythm.
 
 ## Easing changes
 
