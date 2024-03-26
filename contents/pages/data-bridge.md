@@ -19,6 +19,8 @@ In either push and pull mode, we will first need to create an `ML_PROJECT` code.
 
 ## Push mode through our HTTPS API
 
+First, you need to generate an access token, see [Authentication](/authentication).
+
 The data push endpoint allows you to send us your data. You can do so by calling our API this way (replace the uppercase string with their values):
 
 ```sh
@@ -33,8 +35,9 @@ In this call, it suffices to provide us with a list of triples containing:
 - A **sensorId**: allowing to uniquely identify a sensor thanks to a character string,
 - An optional **valueName** field: corresponding to a value associated with the sensor for a specific variable (by default &quot;none&quot;), it is useful for example to indicate the x/y/z axes of an accelerometer. This field can only contain letters (lowercase and uppercase), numbers or underscores (\_),
 - A **date**: indicating the UTC date of the reading in ISO format (UTC => universal time),
-- A **value**: corresponding to its value at this time, this value must imperatively be a number (a value like **value: '3.14'** will be refused, use **value: 3.14** instead),
-- An optional **labels** field: for data tagging purposes, enabling specific tags or categories to be assigned to associated data, making it easier to organize, classify and further process.
+- A **value**: corresponding to its value at this time, this value must imperatively be a number (a value like `"value": "3.14"` will be refused, use `"value": 3.14` instead),
+- An optional **precision** field indicating the quality of the value. The precision is an integer between 0 and 100.
+- An optional **labels** field: for data labeling purposes, enabling specific labels to be assigned to data, making it easier to organize, classify and further process. The labels field is an array with one or more labels e.g. `labels: ["label1", "label2"]`.
 
 **Warning**: the pair sensorId/valueName must be unique for each sensor.
 
