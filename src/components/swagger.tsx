@@ -1,7 +1,6 @@
 import React from "react";
 import "swagger-ui-react/swagger-ui.css";
 import dynamic from "next/dynamic";
-import type SwaggerUI from "swagger-ui-react";
 import { SwaggerUIProps } from "swagger-ui-react";
 
 const DynamicSwagger = dynamic<SwaggerUIProps>(
@@ -13,26 +12,25 @@ const DynamicSwagger = dynamic<SwaggerUIProps>(
 );
 
 const TAGS = [
-  "events",
-  "images",
-  "attachments",
-  "sensors",
-  "reports",
-  "search",
-  "anomalies",
-  "data",
-  "maintenances",
-  "factories",
-  "organisations",
-  "users",
   "auth",
+  "users",
+  "organisations",
+  "factories",
+  "interventions",
+  "data",
+  "alerts",
+  "search",
+  "reports",
   "trends",
+  "attachments",
+  "images",
+  "events",
   "applications",
 ];
 
 const Swagger = () => {
   let url_api =
-    "https://api.diagrams-technologies.dev/v0/openAPI?mutedParameters=X-APP-Version,X-SDK-Version,X-API-Version\n";
+    "https://api.diagrams-technologies.com/v0/openAPI?mutedParameters=X-APP-Version,X-SDK-Version,X-API-Version\n";
   TAGS.forEach((t) => {
     url_api += "&\nmutedTags=" + t + "\n";
   });
