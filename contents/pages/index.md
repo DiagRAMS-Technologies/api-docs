@@ -15,7 +15,7 @@ If you are new to the DiagRAMS API, you may want a [quick introduction](/authent
 
 Also, you can directly check our [API reference](/api-reference) for a more direct approach.
 
-If you want test, debug, and interact with API. You can download the open-source software [Insomnia](https://insomnia.rest/download)
+If you want test, debug, and interact with API. You can download the open-source software [Insomnia](https://insomnia.rest/download).
 
 The codebase of this website is publicly available on Github. If you notice mistakes or want to make [your contribution here](https://github.com/DiagRAMS-Technologies/api-docs).
 
