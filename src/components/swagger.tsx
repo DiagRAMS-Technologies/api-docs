@@ -9,22 +9,36 @@ const DynamicSwagger = dynamic<SwaggerUIProps>(
   {
     loading: () => <p>Loading...</p>,
     ssr: false,
-  },
+  }
 );
 
-
-const TAGS = ["events","images","attachments","sensors","reports","search","anomalies","data","maintenances","factories","organisations","users","auth","trends","applications"]
+const TAGS = [
+  "events",
+  "images",
+  "attachments",
+  "sensors",
+  "reports",
+  "search",
+  "anomalies",
+  "data",
+  "maintenances",
+  "factories",
+  "organisations",
+  "users",
+  "auth",
+  "trends",
+  "applications",
+];
 
 const Swagger = () => {
-  let url_api = "https://api.diagrams-technologies.dev/v0/openAPI?mutedParameters=X-APP-Version,X-SDK-Version,X-API-Version\n"
-  TAGS.forEach(t => {
-    url_api += "&\nmutedTags=" + t + "\n"
-  })
+  let url_api =
+    "https://api.diagrams-technologies.dev/v0/openAPI?mutedParameters=X-APP-Version,X-SDK-Version,X-API-Version\n";
+  TAGS.forEach((t) => {
+    url_api += "&\nmutedTags=" + t + "\n";
+  });
   return (
     <div className="App">
-      <DynamicSwagger url={url_api} 
-        docExpansion='none'
-       />
+      <DynamicSwagger url={url_api} docExpansion="none" />
     </div>
   );
 };

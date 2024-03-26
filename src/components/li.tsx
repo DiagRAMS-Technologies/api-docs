@@ -1,6 +1,6 @@
 const ListItem = ({
-    children,
-    ...props
+  children,
+  ...props
 }: {
   children: React.ReactNode;
 } & React.LiHTMLAttributes<HTMLLIElement>) => (
@@ -10,7 +10,8 @@ const ListItem = ({
       .root > :global(:first-child:last-child) {
         margin: 0;
       }
-      .root > :global(ol), .root > :global(ul) {
+      .root > :global(ol),
+      .root > :global(ul) {
         margin: 0;
       }
     `}</style>

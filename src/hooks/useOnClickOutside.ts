@@ -4,7 +4,7 @@ import React, { useEffect, useCallback, useRef, useState } from "react";
 
 export type UseOnClickOutsideHook = (
   handler: (event: MouseEvent | TouchEvent) => void
-) => [Array<React.Ref<HTMLElement>>, Array<HTMLElement| null>];
+) => [Array<React.Ref<HTMLElement>>, Array<HTMLElement | null>];
 
 export default function createUseOnClickOutside(
   nbRef = 1
@@ -13,13 +13,13 @@ export default function createUseOnClickOutside(
     handler: Parameters<UseOnClickOutsideHook>[0]
   ): ReturnType<UseOnClickOutsideHook> {
     const arrayNode: Array<
-      [HTMLElement | null, React.Dispatch<React.SetStateAction<HTMLElement | null>>]
+      [
+        HTMLElement | null,
+        React.Dispatch<React.SetStateAction<HTMLElement | null>>
+      ]
     > = new Array(nbRef).fill("").map(() => useState<HTMLElement | null>(null));
-    const arrayNodeRef: Array<React.MutableRefObject<HTMLElement | null>> = new Array(
-      nbRef
-    )
-      .fill("")
-      .map((_, index) => useRef(arrayNode[index][0]));
+    const arrayNodeRef: Array<React.MutableRefObject<HTMLElement | null>> =
+      new Array(nbRef).fill("").map((_, index) => useRef(arrayNode[index][0]));
     const arrayRef: Array<(node: HTMLElement) => void> = new Array(nbRef)
       .fill("")
       .map((_, index) => {

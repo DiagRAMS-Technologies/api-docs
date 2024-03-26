@@ -193,20 +193,16 @@ const emphasisMap: NodeToElementMapper<MarkdownEmphasisNode> = (
 );
 const codeMap: NodeToElementMapper<MarkdownCodeNode> = (context, node) => (
   <div className="syntax" key={context.index}>
-    <SyntaxHighlighter
-      key={context.index}
-      language={'bash'}
-      style={dracula}
-    >
+    <SyntaxHighlighter key={context.index} language={"bash"} style={dracula}>
       {node.value}
     </SyntaxHighlighter>
     <style jsx>{`
-      .syntax{
+      .syntax {
         grid: flex;
         max-width: calc(calc(var(--column) * 10) + calc(var(--gutter) * 6));
       }
     `}</style>
-</div>
+  </div>
 );
 const inlinecodeMap: NodeToElementMapper<MarkdownCodeNode> = (
   context,

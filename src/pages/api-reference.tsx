@@ -28,4 +28,4 @@ export default function ApiReference() {
       `}</style>
     </Layout>
   );
-};
+}
