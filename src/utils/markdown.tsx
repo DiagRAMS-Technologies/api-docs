@@ -54,7 +54,7 @@ export type MarkdownEmphasisNode = {
   value: string;
   children: MarkdownNode[];
 };
-export type MarkdownImlineCodeNode = {
+export type MarkdownInlineCodeNode = {
   type: "inlineCode";
   value: string;
 };
@@ -104,7 +104,7 @@ export type MarkdownNode =
   | MarkdownTextNode
   | MarkdownBoldNode
   | MarkdownEmphasisNode
-  | MarkdownImlineCodeNode
+  | MarkdownInlineCodeNode
   | MarkdownParagraphNode
   | MarkdownCodeNode
   | MarkdownListNode
