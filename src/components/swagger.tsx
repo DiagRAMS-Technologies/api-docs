@@ -17,6 +17,7 @@ const TAGS = [
   "organisations",
   "factories",
   "interventions",
+  "tasks",
   "data",
   "alerts",
   "search",
