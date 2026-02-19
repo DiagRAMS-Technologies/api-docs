@@ -19,6 +19,8 @@ In either push and pull mode, we will first need to create an `ML_PROJECT` code.
 
 ## Push mode through our HTTPS API
 
+_If you use Node-RED, you may want to directly use [our custom flows](https://flows.nodered.org/node/node-red-diagrams-bridge) to push your data._
+
 First, you need to generate an access token, see [Authentication](/authentication).
 
 The data push endpoint allows you to send us your data. You can do so by calling our API this way (replace the uppercase string with their values):
