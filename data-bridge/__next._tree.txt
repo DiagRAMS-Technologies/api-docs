@@ -1,0 +1,3 @@
+:HL["https://docs.diagrams-technologies.com/_next/static/chunks/0cp25b17b6ye0.css","style"]
+:HL["https://docs.diagrams-technologies.com/_next/static/chunks/175kt23ll6c8_.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"slug","param":{"type":"oc","key":"data-bridge","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"csCu2zjjVHDEuMgIG3Mvr"}

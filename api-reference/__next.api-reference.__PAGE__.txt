@@ -1,0 +1,8 @@
+1:"$Sreact.fragment"
+2:I[51570,["https://docs.diagrams-technologies.com/_next/static/chunks/0da0v_~~4bmp6.js","https://docs.diagrams-technologies.com/_next/static/chunks/0sh.6aqimy6c9.js","https://docs.diagrams-technologies.com/_next/static/chunks/0nny8n1izeilt.js"],"default"]
+3:I[97367,["https://docs.diagrams-technologies.com/_next/static/chunks/0da0v_~~4bmp6.js","https://docs.diagrams-technologies.com/_next/static/chunks/0sh.6aqimy6c9.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+:HL["https://docs.diagrams-technologies.com/_next/static/chunks/0f~s5eizjmrsv.css","style"]
+:HL["https://docs.diagrams-technologies.com/_next/static/chunks/175kt23ll6c8_.css","style"]
+0:{"rsc":["$","$1","c",{"children":[["$","section",null,{"className":"contentBlock-module-scss-module__fp3IkG__root","children":["$","$L2",null,{}]}],[["$","link","0",{"rel":"stylesheet","href":"https://docs.diagrams-technologies.com/_next/static/chunks/0f~s5eizjmrsv.css","precedence":"next"}],["$","link","1",{"rel":"stylesheet","href":"https://docs.diagrams-technologies.com/_next/static/chunks/175kt23ll6c8_.css","precedence":"next"}],["$","script","script-0",{"src":"https://docs.diagrams-technologies.com/_next/static/chunks/0nny8n1izeilt.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"csCu2zjjVHDEuMgIG3Mvr"}
+5:null
