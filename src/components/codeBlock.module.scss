@@ -1,0 +1,4 @@
+.syntax {
+  grid: flex;
+  max-width: calc(calc(var(--column) * 10) + calc(var(--gutter) * 6));
+}

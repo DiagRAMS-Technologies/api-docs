@@ -1,9 +1,10 @@
+import { describe, test, expect } from "@jest/globals";
 import { insertSummary, collectNodesByType } from "./summary";
-import type { MarkdownRootNode } from "./markdown";
+import { type MarkdownRootNode } from "./markdown";
 
 describe("summary", () => {
   describe("collectNodesByType", () => {
-    it("should collect first level node", () => {
+    test("should collect first level node", () => {
       expect(
         collectNodesByType(
           [
@@ -28,8 +29,8 @@ describe("summary", () => {
             },
           ],
 
-          "heading"
-        )
+          "heading",
+        ),
       ).toMatchInlineSnapshot(`
         [
           {
@@ -49,7 +50,7 @@ describe("summary", () => {
 });
 
 describe("insertSummary", () => {
-  it("returns the expected summary for a given AST with a continuous", () => {
+  test("returns the expected summary for a given AST with a continuous", () => {
     const rootNode: MarkdownRootNode = {
       type: "root",
       children: [
@@ -170,7 +171,7 @@ describe("insertSummary", () => {
 });
 
 describe("insertSummary", () => {
-  it("returns the expected summary for a given AST with a gap", () => {
+  test("returns the expected summary for a given AST with a gap", () => {
     const rootNode: MarkdownRootNode = {
       type: "root",
       children: [
@@ -361,7 +362,7 @@ describe("insertSummary", () => {
 });
 
 describe("insertSummary", () => {
-  it("returns the expected summary for a given AST with nested at the good place", () => {
+  test("returns the expected summary for a given AST with nested at the good place", () => {
     const rootNode: MarkdownRootNode = {
       type: "root",
       children: [
@@ -575,7 +576,7 @@ describe("insertSummary", () => {
 });
 
 describe("insertSummary", () => {
-  it("returns the expected summary for a given AST with nested headings simply", () => {
+  test("returns the expected summary for a given AST with nested headings simply", () => {
     const rootNode: MarkdownRootNode = {
       type: "root",
       children: [
@@ -816,7 +817,7 @@ describe("insertSummary", () => {
 });
 
 describe("insertSummary", () => {
-  it("returns the expected summary for a given AST with nested headings simply", () => {
+  test("returns the expected summary for a given AST with nested headings simply", () => {
     const rootNode: MarkdownRootNode = {
       type: "root",
       children: [

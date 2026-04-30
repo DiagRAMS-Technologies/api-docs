@@ -1,19 +1,14 @@
-import type { HTMLAttributes } from "react";
+import styles from "./strong.module.scss";
+import { type HTMLAttributes, type ReactNode } from "react";
 
 const Strong = ({
   children,
   ...props
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 } & HTMLAttributes<HTMLElement>) => (
-  <strong className="root" {...props}>
+  <strong className={styles.root} {...props}>
     {children}
-    <style jsx>{`
-      .root {
-        color: var(--dark);
-        font-weight: bold;
-      }
-    `}</style>
   </strong>
 );
 

@@ -24,7 +24,7 @@ export function collectMarkdownText(node: MarkdownNode, str = ""): string {
 
 export function collectNodesByType<T extends MarkdownNode>(
   nodes: MarkdownNode[],
-  type: T["type"]
+  type: T["type"],
 ): T[] {
   return nodes.reduce<T[]>((filterNodes, node) => {
     return filterNodes
@@ -32,7 +32,7 @@ export function collectNodesByType<T extends MarkdownNode>(
       .concat(
         "children" in node && node.children
           ? collectNodesByType(node.children, type)
-          : []
+          : [],
       );
   }, [] as T[]);
 }
@@ -40,7 +40,7 @@ export function collectNodesByType<T extends MarkdownNode>(
 export function insertSummary(rootNode: MarkdownRootNode): MarkdownRootNode {
   const nodeHeadings = collectNodesByType<MarkdownHeadingNode>(
     rootNode.children,
-    "heading"
+    "heading",
   ).filter((node) => node.depth > 1);
 
   if (nodeHeadings.length > 1)
@@ -119,7 +119,7 @@ export function insertSummary(rootNode: MarkdownRootNode): MarkdownRootNode {
               spread: false,
               children: [],
             } as MarkdownListNode,
-          ]
+          ],
         )[0],
         ...rootNode.children.slice(1),
       ],

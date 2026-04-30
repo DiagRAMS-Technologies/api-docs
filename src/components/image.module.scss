@@ -1,0 +1,28 @@
+@use "../variables.scss";
+
+.img img {
+  clear: both;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+@media screen and (min-width: variables.$CSS_BREAKPOINT_START_M) {
+  .img img.left,
+  .img img.right {
+    width: var(--block);
+  }
+  .img img.left {
+    float: left;
+    margin-right: var(--gutter);
+  }
+  .img img.right {
+    float: right;
+    margin-left: var(--gutter);
+  }
+}
+@media screen and (min-width: variables.$CSS_BREAKPOINT_START_L) {
+  .img img.left,
+  .img img.right {
+    width: calc(calc(var(--column) * 4) + calc(var(--gutter) * 3));
+  }
+}

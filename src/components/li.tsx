@@ -1,20 +1,14 @@
+import styles from "./li.module.scss";
+import { type LiHTMLAttributes, type ReactNode } from "react";
+
 const ListItem = ({
   children,
   ...props
 }: {
-  children: React.ReactNode;
-} & React.LiHTMLAttributes<HTMLLIElement>) => (
-  <li className="root" {...props}>
+  children: ReactNode;
+} & LiHTMLAttributes<HTMLLIElement>) => (
+  <li className={styles.root} {...props}>
     {children}
-    <style jsx>{`
-      .root > :global(:first-child:last-child) {
-        margin: 0;
-      }
-      .root > :global(ol),
-      .root > :global(ul) {
-        margin: 0;
-      }
-    `}</style>
   </li>
 );
 

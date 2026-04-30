@@ -1,4 +1,5 @@
-/* eslint-disable react-hooks/exhaustive-deps */
+"use client";
+
 import {
   useState,
   useCallback,
@@ -19,7 +20,7 @@ export type UseDimensionResult = DimensionObject | "none";
 export type UseDimensionsHook = [
   (node: HTMLElement) => void,
   UseDimensionResult,
-  HTMLElement | null
+  HTMLElement | null,
 ];
 
 export interface UseDimensionsArgs {
@@ -28,7 +29,7 @@ export interface UseDimensionsArgs {
 
 function useDimensions(
   { liveMeasure = true }: UseDimensionsArgs = {},
-  deps: Parameters<typeof useEffect>[1] = []
+  deps: Parameters<typeof useEffect>[1] = [],
 ): UseDimensionsHook {
   const [dimensions, setDimensions] = useState<UseDimensionResult>("none");
   const [node, _setNode] = useState<HTMLElement | null>(null);

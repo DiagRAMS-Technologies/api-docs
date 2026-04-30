@@ -1,19 +1,14 @@
-import type { HTMLAttributes } from "react";
+import styles from "./inlineCode.module.scss";
+import { type HTMLAttributes, type ReactNode } from "react";
 
 const Code = ({
   children,
   ...props
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 } & HTMLAttributes<HTMLElement>) => (
-  <code className="root" {...props}>
+  <code className={styles.root} {...props}>
     {children}
-    <style jsx>{`
-      .root {
-        text-decoration: none;
-        font-family: monospace;
-      }
-    `}</style>
   </code>
 );
 

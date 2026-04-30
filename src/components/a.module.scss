@@ -1,0 +1,36 @@
+.root,
+.root:visited {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--primary);
+  line-height: var(--mediumLineHeight);
+}
+.root:hover,
+.root:focus {
+  color: var(--primary);
+}
+.root.first,
+.root.last {
+  display: inline-flex;
+  flex-direction: row;
+  gap: calc(var(--gutter) / 4);
+  align-items: center;
+}
+.root.first span.icon,
+.root.last span.icon {
+  display: flex;
+  height: var(--vRythm);
+  width: calc(var(--vRythm) * 0.55);
+  background: var(--primary);
+  mask-repeat: no-repeat;
+  mask-size: calc(var(--vRythm) * 0.55);
+  -webkit-mask-size: calc(var(--vRythm) * 0.55);
+  mask-position: left bottom;
+  mask-image: url("/images/icons/arrow-left.svg");
+}
+.root.last {
+  flex-direction: row-reverse;
+}
+.root.last span.icon {
+  mask-image: url("/images/icons/arrow-right.svg");
+}

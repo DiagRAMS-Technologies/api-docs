@@ -1,0 +1,24 @@
+@use "../../variables.scss";
+
+.entry_title a {
+  text-decoration: none !important;
+}
+.entry_description {
+  margin: 0 !important;
+}
+.entry_item {
+  padding: 0 0 var(--vRythm) 0;
+  border-bottom: var(--border) solid var(--secondary);
+}
+.entry_item:first-child {
+  padding: 0 0 var(--vRythm) 0;
+}
+.entry_item:last-child {
+  border: none;
+}
+
+@media screen and (min-width: variables.$CSS_BREAKPOINT_START_L) {
+  .clear {
+    clear: left;
+  }
+}

@@ -1,0 +1,29 @@
+@use "../variables.scss";
+
+.root :global(p.illustration) {
+  float: left;
+  width: var(--block);
+  margin: 0 var(--gutter) 0 0;
+}
+.root img {
+  width: 100%;
+  margin: 0;
+}
+.clear {
+  clear: both;
+}
+
+.root {
+  background-color: var(--light);
+  padding: calc(var(--vRythm) * 2) var(--gutter);
+}
+@media screen and (min-width: variables.$CSS_BREAKPOINT_START_L) {
+  .root {
+    padding: calc(var(--vRythm) * 2) calc(var(--gutter) * 2);
+  }
+}
+@media screen and (min-width: variables.$CSS_BREAKPOINT_START_XL) {
+  .root {
+    padding: calc(var(--vRythm) * 3) calc(var(--gutter) * 8);
+  }
+}

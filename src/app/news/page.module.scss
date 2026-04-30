@@ -1,0 +1,11 @@
+.pagination {
+  display: flex;
+  gap: var(--gutter);
+  align-items: center;
+  justify-content: center;
+}
+@media print {
+  .pagination {
+    display: none;
+  }
+}

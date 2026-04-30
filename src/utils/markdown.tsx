@@ -1,10 +1,8 @@
-import { PrismAsync as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { ASSET_PREFIX } from "./constants";
 import { unified } from "unified";
 import { fixText } from "./text";
-import YError from "yerror";
+import { YError } from "yerror";
 import { toASCIIString } from "./ascii";
-import { CSS_BREAKPOINT_START_L, CSS_BREAKPOINT_START_M } from "./constants";
 import { parseYouTubeURL } from "./youtube";
 import remarkParse from "remark-parse";
 import Anchor from "../components/a";
@@ -25,7 +23,11 @@ import Strong from "../components/strong";
 import Emphasis from "../components/em";
 import InlineCode from "../components/inlineCode";
 import Cite from "../components/cite";
-import type { ReactNode } from "react";
+import Image from "../components/image";
+import { type ReactNode } from "react";
+import YouTubePlayer from "@/components/youtube";
+import Attachment from "@/components/attachment";
+import CodeBlock from "@/components/codeBlock";
 
 export type MarkdownRootNode = {
   type: "root";
@@ -118,54 +120,54 @@ export type MarkdownNodeType = MarkdownNode["type"];
 export type MappingContext = { index: number };
 export type NodeToElementMapper<T extends MarkdownNode> = (
   context: MappingContext,
-  node: T
-) => React.ReactNode;
+  node: T,
+) => ReactNode;
 
 const rootMap: NodeToElementMapper<MarkdownRootNode> = (
   context: MappingContext,
-  node
+  node,
 ) =>
   node.children.map((node, index) =>
-    renderMarkdown({ ...context, index }, node)
+    renderMarkdown({ ...context, index }, node),
   );
 const paragraphMap: NodeToElementMapper<MarkdownParagraphNode> = (
   context: MappingContext,
-  node
+  node,
 ) => (
   <Paragraph key={context.index}>
     {node.children.map((node, index) =>
-      renderMarkdown({ ...context, index }, node)
+      renderMarkdown({ ...context, index }, node),
     )}
   </Paragraph>
 );
 const headingMap: NodeToElementMapper<MarkdownHeadingNode> = (
   context: MappingContext,
-  node
+  node,
 ) => {
   const HeadingComponent =
     node.depth === 1
       ? Heading1
       : node.depth === 2
-      ? Heading2
-      : node.depth === 3
-      ? Heading3
-      : node.depth === 4
-      ? Heading4
-      : node.depth === 5
-      ? Heading5
-      : Heading6;
+        ? Heading2
+        : node.depth === 3
+          ? Heading3
+          : node.depth === 4
+            ? Heading4
+            : node.depth === 5
+              ? Heading5
+              : Heading6;
 
   return node.depth === 1 ? (
     <HeadingComponent key={context.index}>
       {node.children.map((node, index) =>
-        renderMarkdown({ ...context, index }, node)
+        renderMarkdown({ ...context, index }, node),
       )}
     </HeadingComponent>
   ) : (
     <HeadingComponent key={context.index}>
       <Anchored id={toASCIIString(collectMarkdownText(node))}>
         {node.children.map((node, index) =>
-          renderMarkdown({ ...context, index }, node)
+          renderMarkdown({ ...context, index }, node),
         )}
       </Anchored>
     </HeadingComponent>
@@ -177,61 +179,51 @@ const textMap: NodeToElementMapper<MarkdownTextNode> = (context, node) => (
 const boldMap: NodeToElementMapper<MarkdownEmphasisNode> = (context, node) => (
   <Strong key={context.index}>
     {node.children.map((node, index) =>
-      renderMarkdown({ ...context, index }, node)
+      renderMarkdown({ ...context, index }, node),
     )}
   </Strong>
 );
 const emphasisMap: NodeToElementMapper<MarkdownEmphasisNode> = (
   context,
-  node
+  node,
 ) => (
   <Emphasis key={context.index}>
     {node.children.map((node, index) =>
-      renderMarkdown({ ...context, index }, node)
+      renderMarkdown({ ...context, index }, node),
     )}
   </Emphasis>
 );
 const codeMap: NodeToElementMapper<MarkdownCodeNode> = (context, node) => (
-  <div className="syntax" key={context.index}>
-    <SyntaxHighlighter key={context.index} language={"bash"} style={dracula}>
-      {node.value}
-    </SyntaxHighlighter>
-    <style jsx>{`
-      .syntax {
-        grid: flex;
-        max-width: calc(calc(var(--column) * 10) + calc(var(--gutter) * 6));
-      }
-    `}</style>
-  </div>
+  <CodeBlock key={context.index}>{node.value}</CodeBlock>
 );
 const inlinecodeMap: NodeToElementMapper<MarkdownCodeNode> = (
   context,
-  node
+  node,
 ) => <InlineCode key={context.index}>{node.value}</InlineCode>;
 const listMap: NodeToElementMapper<MarkdownListNode> = (
   context: MappingContext,
-  node
+  node,
 ) =>
   node.ordered ? (
     <OrderedList key={context.index}>
       {node.children.map((node, index) =>
-        renderMarkdown({ ...context, index }, node)
+        renderMarkdown({ ...context, index }, node),
       )}
     </OrderedList>
   ) : (
     <UnorderedList key={context.index}>
       {node.children.map((node, index) =>
-        renderMarkdown({ ...context, index }, node)
+        renderMarkdown({ ...context, index }, node),
       )}
     </UnorderedList>
   );
 const listItemMap: NodeToElementMapper<MarkdownListItemNode> = (
   context: MappingContext,
-  node
+  node,
 ) => (
   <ListItem key={context.index}>
     {node.children.map((node, index) =>
-      renderMarkdown({ ...context, index }, node)
+      renderMarkdown({ ...context, index }, node),
     )}
   </ListItem>
 );
@@ -240,98 +232,80 @@ const hrMap: NodeToElementMapper<MarkdownHRNode> = (context) => (
 );
 const htmlMap: NodeToElementMapper<MarkdownHTMLNode> = (
   context: MappingContext,
-  node
+  node,
 ) =>
   node.value === "cite" ? (
     <Cite key={context.index}>
       {(node.children || []).map((node, index) =>
-        renderMarkdown({ ...context, index }, node)
+        renderMarkdown({ ...context, index }, node),
       )}
     </Cite>
   ) : null;
 const blockquoteMap: NodeToElementMapper<MarkdownBlockquoteNode> = (
   context,
-  node
+  node,
 ) => (
   <Blockquote key={context.index}>
     {node.children.map((node, index) =>
-      renderMarkdown({ ...context, index }, node)
+      renderMarkdown({ ...context, index }, node),
     )}
   </Blockquote>
 );
 const imageMap: NodeToElementMapper<MarkdownImageNode> = (context, node) => {
-  const finalTitle = (node.title || "").replace(/^🖼(➡️|⬅️)\s*/, "");
+  const title = (node.title || "")
+    .replace(/^🖼(➡️|⬅️)\s*/u, "")
+    .replace("#️⃣", "");
+  const float = node.title?.includes("➡️")
+    ? "right"
+    : node.title?.includes("⬅️")
+      ? "left"
+      : undefined;
+  const orientation = node.title?.includes("◼")
+    ? "square"
+    : node.title?.includes("▮")
+      ? "portrait"
+      : "landscape";
 
   return (
-    <span key={context.index}>
-      <style jsx>{`
-        img {
-          clear: both;
-          display: block;
-          width: 100%;
-          max-width: 100%;
-        }
-        @media screen and (min-width: ${CSS_BREAKPOINT_START_M}) {
-          img.left,
-          img.right {
-            width: var(--block);
-          }
-          img.left {
-            float: left;
-            margin-right: var(--gutter);
-          }
-          img.right {
-            float: right;
-            margin-left: var(--gutter);
-          }
-        }
-        @media screen and (min-width: ${CSS_BREAKPOINT_START_L}) {
-          img.left,
-          img.right {
-            width: calc(calc(var(--column) * 4) + calc(var(--gutter) * 3));
-          }
-        }
-      `}</style>
-    </span>
+    <Image key={context.index} {...{ ...node, title, float, orientation }} />
   );
 };
 
 const hyperlinkMap: NodeToElementMapper<MarkdownLinkNode> = (context, node) => {
   const youtubeURL = parseYouTubeURL(node.url);
 
-  return youtubeURL && node?.title === "📺" ? (
-    <span className="root" key={context.index}>
-      <iframe
-        width="560"
-        height="315"
-        src={`https://www.youtube.com/embed/${youtubeURL.videoId}${
-          youtubeURL.startTime ? "?start=" + youtubeURL.startTime : ""
-        }`}
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe>
-      <style jsx>{`
-        .root {
-          display: block;
-          overflow: hidden;
-          padding-bottom: 56.25%;
-          position: relative;
-          height: 0;
-        }
-        .root iframe {
-          left: 0;
-          top: 0;
-          height: 100%;
-          width: 100%;
-          position: absolute;
-        }
-      `}</style>
-    </span>
-  ) : (
-    <Anchor href={node.url} title={node.title} key={context.index}>
+  return node?.title?.startsWith("🎧") ? (
+    <audio
+      key={context.index}
+      controls
+      src={qualifyPath(node.url)}
+      title={node.title.replace(/^🎧\s*/u, "").trim()}
+    />
+  ) : youtubeURL && node?.title?.startsWith("📺") ? (
+    <YouTubePlayer
+      key={context.index}
+      url={youtubeURL}
+      title={node.title.replace(/^📺\s*/u, "").trim()}
+    />
+  ) : node?.title?.startsWith("📃") ? (
+    <Attachment
+      key={context.index}
+      src={qualifyPath(node.url)}
+      title={node.title.replace(/^📃\s*/u, "").trim()}
+    >
       {node.children.map((node, index) =>
-        renderMarkdown({ ...context, index }, node)
+        renderMarkdown({ ...context, index }, node),
+      )}
+    </Attachment>
+  ) : (
+    <Anchor
+      href={node.url}
+      title={node.title?.replace(/^📥\s*/u, "").trim()}
+      key={context.index}
+      download={node.title?.includes("📥")}
+    >
+      {node.children.map((node, index) =>
+        renderMarkdown({ ...context, index }, node),
       )}
     </Anchor>
   );
@@ -362,7 +336,7 @@ export function parseMarkdown(input: string): MarkdownRootNode {
 
 export function renderMarkdown<T extends MappingContext>(
   context: T,
-  node: MarkdownNode
+  node: MarkdownNode,
 ): ReactNode {
   if ("children" in node) {
     node = eventuallyConvertHTMLNodes(node as MarkdownRootNode);
@@ -395,7 +369,7 @@ function eventuallyConvertHTMLNodes(rootNode: MarkdownRootNode): MarkdownNode {
   let firstHTMLNode: MarkdownHTMLNode | undefined;
   do {
     firstHTMLNode = rootNode.children.find(
-      (node) => node.type === "html" && node.value.startsWith("<")
+      (node) => node.type === "html" && node.value.startsWith("<"),
     ) as MarkdownHTMLNode;
 
     if (typeof firstHTMLNode !== "undefined") {
@@ -433,11 +407,11 @@ function eventuallyConvertHTMLNodes(rootNode: MarkdownRootNode): MarkdownNode {
       }
 
       if (!correspondingHTMLNode) {
-        throw new YError("E_NO_CORRESPONDING_NODE", htmlType);
+        throw new YError("E_NO_CORRESPONDING_NODE", [htmlType]);
       }
 
       const correspondingHTMLNodeIndex = rootNode.children.indexOf(
-        correspondingHTMLNode
+        correspondingHTMLNode,
       );
 
       rootNode = {
@@ -453,14 +427,14 @@ function eventuallyConvertHTMLNodes(rootNode: MarkdownRootNode): MarkdownNode {
               firstHTMLNodeIndex < correspondingHTMLNodeIndex - 1
                 ? rootNode.children.slice(
                     firstHTMLNodeIndex + 1,
-                    correspondingHTMLNodeIndex
+                    correspondingHTMLNodeIndex,
                   )
                 : [],
           },
           ...(correspondingHTMLNodeIndex < rootNode.children.length - 1
             ? rootNode.children.slice(
                 correspondingHTMLNodeIndex + 1,
-                rootNode.children.length
+                rootNode.children.length,
               )
             : []),
         ],
@@ -469,4 +443,15 @@ function eventuallyConvertHTMLNodes(rootNode: MarkdownRootNode): MarkdownNode {
   } while (firstHTMLNode);
 
   return rootNode;
+}
+
+// Change VSCode autocompleted paths to URLs
+export function qualifyPath(path: string): string {
+  if (/^https?:\/\//.test(path)) {
+    return path;
+  }
+  if (path.startsWith("/public/")) {
+    return ASSET_PREFIX + path.replace("/public/", "/");
+  }
+  return path;
 }

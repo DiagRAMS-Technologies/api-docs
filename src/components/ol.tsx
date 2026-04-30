@@ -1,17 +1,14 @@
+import styles from "./ol.module.scss";
+import { type OlHTMLAttributes, type ReactNode } from "react";
+
 const OrderedList = ({
   children,
   ...props
 }: {
-  children: React.ReactNode;
-} & React.OlHTMLAttributes<HTMLOListElement>) => (
-  <ol className="root" {...props}>
+  children: ReactNode;
+} & OlHTMLAttributes<HTMLOListElement>) => (
+  <ol className={styles.root} {...props}>
     {children}
-    <style jsx>{`
-      .root {
-        margin: 0 0 var(--vRythm) 0;
-        padding: 0 0 0 var(--gutter);
-      }
-    `}</style>
   </ol>
 );
 

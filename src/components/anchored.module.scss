@@ -1,0 +1,23 @@
+.root small {
+  font-weight: bold;
+}
+.root a.icon {
+  visibility: hidden;
+  width: calc(var(--column) * 0.9);
+  height: calc(var(--vRythm) * 0.9);
+  background: var(--quaternary);
+  mask-repeat: no-repeat;
+  mask-position: left center;
+  mask-size: calc(var(--vRythm) * 0.65);
+}
+.root:hover a.icon {
+  visibility: visible;
+  mask-image: url("/images/icons/link.svg");
+}
+.root a.icon:target {
+  visibility: visible;
+  mask-image: url("/images/icons/target.svg");
+}
+.root a.icon span {
+  visibility: hidden;
+}

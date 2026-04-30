@@ -1,4 +1,4 @@
-import YError from "yerror";
+import { YError } from "yerror";
 
 export const APP_ENVS = ["local", "staging", "production"] as const;
 export type AppEnv = (typeof APP_ENVS)[number];
@@ -13,7 +13,7 @@ const applicationEnv: AppEnv =
   (process.env.NEXT_PUBLIC_APP_ENV as AppEnv) || "production";
 
 if (!APP_ENVS.includes(applicationEnv)) {
-  throw new YError("E_BAD_APP_ENV", applicationEnv, APP_ENVS);
+  throw new YError("E_BAD_APP_ENV", [applicationEnv, APP_ENVS]);
 }
 
 const applicationVersion = process.env.NEXT_PUBLIC_APP_VERSION || "unknown";

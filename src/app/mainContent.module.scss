@@ -1,0 +1,37 @@
+@use "../variables.scss";
+
+.content {
+  display: block;
+  width: 100%;
+  padding: 0 var(--gutter) var(--vRythm) var(--gutter);
+}
+
+@media screen and (max-width: variables.$CSS_BREAKPOINT_END_S) {
+  .content {
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (min-width: variables.$CSS_BREAKPOINT_START_M) and (max-width: variables.$CSS_BREAKPOINT_END_M) {
+  .content {
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: variables.$CSS_BREAKPOINT_START_L) and (max-width: variables.$CSS_BREAKPOINT_END_L) {
+  .content {
+    width: variables.$CSS_BREAKPOINT_START_L;
+    margin: 0 auto;
+    padding: 0 calc(var(--gutter) * 2) calc(var(--vRythm) * 2)
+      calc(var(--gutter) * 2);
+  }
+}
+
+@media screen and (min-width: variables.$CSS_BREAKPOINT_START_XL) {
+  .content {
+    width: variables.$CSS_BREAKPOINT_START_XL;
+    margin: 0 auto;
+    padding: 0 calc(var(--gutter) * 3) calc(var(--vRythm) * 2)
+      calc(var(--gutter) * 3);
+  }
+}

@@ -1,0 +1,45 @@
+"use client";
+
+import "swagger-ui-react/swagger-ui.css";
+import dynamic from "next/dynamic";
+
+const DynamicSwagger = dynamic(
+  () => import("swagger-ui-react").then((module) => module.default),
+  {
+    loading: () => <p>Loading...</p>,
+    ssr: false,
+  },
+);
+
+const TAGS = [
+  "auth",
+  "users",
+  "organisations",
+  "factories",
+  "interventions",
+  "tasks",
+  "data",
+  "alerts",
+  "search",
+  "reports",
+  "trends",
+  "attachments",
+  "images",
+  "events",
+  "applications",
+];
+
+const Swagger = () => {
+  let url_api =
+    "https://api.diagrams-technologies.com/v0/openAPI?mutedParameters=X-APP-Version,X-SDK-Version,X-API-Version\n";
+  TAGS.forEach((t) => {
+    url_api += "&\nmutedTags=" + t + "\n";
+  });
+  return (
+    <div className="App">
+      <DynamicSwagger url={url_api} docExpansion="none" />
+    </div>
+  );
+};
+
+export default Swagger;

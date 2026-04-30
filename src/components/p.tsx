@@ -1,19 +1,14 @@
-import type { HTMLAttributes } from "react";
+import styles from "./p.module.scss";
+import { type HTMLAttributes, type ReactNode } from "react";
 
 const Paragraph = ({
   children,
   ...props
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 } & HTMLAttributes<HTMLParagraphElement>) => (
-  <p className="root" {...props}>
+  <p className={styles.root} {...props}>
     {children}
-    <style jsx>{`
-      .root {
-        margin: 0 0 calc(var(--vRythm) * 0.5) 0;
-        color: var(--charcoalgrey);
-      }
-    `}</style>
   </p>
 );
 

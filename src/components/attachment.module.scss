@@ -1,0 +1,40 @@
+@use "../variables.scss";
+
+.root iframe {
+  display: none;
+}
+.root a {
+  display: inline;
+}
+
+@media screen and (min-width: variables.$CSS_BREAKPOINT_START_L) {
+  .root a {
+    display: none;
+  }
+  .root {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+  }
+
+  .root iframe {
+    display: block;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: none;
+  }
+}
+
+@media print {
+  .root iframe {
+    display: none;
+  }
+  .root a {
+    display: inline;
+  }
+}
