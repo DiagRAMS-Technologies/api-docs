@@ -1,15 +1,12 @@
-import { writeFile } from "fs";
-import { promisify } from "util";
-import { join as joinPath } from "path";
+import { writeFile } from "node:fs/promises";
+import { join as joinPath } from "node:path";
 import { generateAtomFeed, generateRSSFeed } from "./feeds";
 import { ASSET_PREFIX, ORGANISATION_NAME } from "./constants";
-import type { FeedDescription, FeedItem } from "./feeds";
-import type {
-  BaseListingPageMetadata,
-  BaseContentPageMetadata,
+import { type FeedDescription, type FeedItem } from "./feeds";
+import {
+  type BaseListingPageMetadata,
+  type BaseContentPageMetadata,
 } from "./contents";
-
-const doWriteFile = promisify(writeFile);
 
 const PROJECT_DIR = joinPath(".");
 const builtAt = new Date().toISOString();
@@ -66,7 +63,7 @@ async function buildAtomFeed(
     feedItems,
   );
 
-  await doWriteFile(
+  await writeFile(
     joinPath(PROJECT_DIR, "public", `${path.slice(1)}.atom`),
     content,
   );
@@ -85,7 +82,7 @@ async function buildRSSFeed(
     feedItems,
   );
 
-  await doWriteFile(
+  await writeFile(
     joinPath(PROJECT_DIR, "public", `${path.slice(1)}.rss`),
     content,
   );

@@ -61,7 +61,7 @@ export default async function Page(props: { params: Promise<Params> }) {
   );
 }
 
-export const generateStaticParams = async (): Promise<Params[]> => {
+export async function generateStaticParams(): Promise<Params[]> {
   const base = pathJoin(".", "contents", "pages");
   const params = (await readDirDeep(`${base}/**/*.md`)).map((path) => {
     const slug = path
@@ -77,7 +77,7 @@ export const generateStaticParams = async (): Promise<Params[]> => {
   });
 
   return params;
-};
+}
 
 async function parsePage(slug: string[] = []): Promise<Entry> {
   const path = pathJoin("contents", "pages", ...slug);

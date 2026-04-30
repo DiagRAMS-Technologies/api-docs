@@ -10,10 +10,10 @@ import Heading1 from "../../components/h1";
 import Paragraph from "../../components/p";
 import Anchor from "../../components/a";
 import Items from "./items";
-import type { BasePagingPageMetadata } from "../../utils/contents";
-import type { FrontMatterResult } from "front-matter";
-import type { MarkdownRootNode } from "../../utils/markdown";
-import type { News, NewsFrontmatterMetadata } from "../../utils/news";
+import { type BasePagingPageMetadata } from "../../utils/contents";
+import { type FrontMatterResult } from "front-matter";
+import { type MarkdownRootNode } from "../../utils/markdown";
+import { type News, type NewsFrontmatterMetadata } from "../../utils/news";
 
 import { type Metadata } from "next";
 import buildMetadata from "@/utils/metadata";
@@ -83,13 +83,13 @@ export default async function Page(props: { params: Promise<Params> }) {
   );
 
   return (
-    <ContentBlock className="title">
-      <Heading1 className="title">{title}</Heading1>
+    <ContentBlock>
+      <Heading1>{title}</Heading1>
       <Paragraph>Discover the latest technical news from DiagRAMS.</Paragraph>
 
       <Items entries={entries} base={"/news/"} />
 
-      <nav className="pagination">
+      <nav className={styles.pagination}>
         {page > 1 ? (
           <Anchor
             icon="arrow-left"

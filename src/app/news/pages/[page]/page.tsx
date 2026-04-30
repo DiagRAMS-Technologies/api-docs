@@ -1,4 +1,3 @@
-import styles from "./page.module.scss";
 import { pathJoin } from "../../../../utils/files";
 import { readEntries } from "../../../../utils/frontmatter";
 import { buildAssets } from "../../../../utils/build";
@@ -13,7 +12,7 @@ export { generateMetadata };
 
 export default NewsEntries;
 
-export const generateStaticParams = async (): Promise<Params[]> => {
+export async function generateStaticParams(): Promise<Params[]> {
   const baseProps = entriesToBaseListingMetadata(
     await readEntries<NewsFrontmatterMetadata>(
       pathJoin(".", "contents", "news"),
@@ -31,5 +30,9 @@ export const generateStaticParams = async (): Promise<Params[]> => {
     .filter((page) => page !== 1)
     .map((page) => ({ page: page.toString() }));
 
+  if (params.length === 0) {
+    return [{ page: "0" }];
+  }
+
   return params;
-};
+}
