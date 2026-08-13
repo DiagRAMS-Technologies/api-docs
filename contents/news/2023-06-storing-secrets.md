@@ -35,20 +35,21 @@ If you need to store application credentials in a database or file, be sure to e
 
 Exchanging secrets requires clear instructions to ensure the security of sensitive information. One of the recommended methods is to use PGP (Pretty Good Privacy) to encrypt and decrypt secrets. PGP is a widely used asymmetric cryptography system that ensures the confidentiality and authenticity of data exchanged.
 
-
 ```sh
 # You can encrypt your PGP key with:
 gpg --default-new-key-algo rsa4096 --gen-key
 
 # You can see all your access_key_secret with:
 gpg --list-secret-keys --keyid-format=long
- 
+
 # You can decrypt with:
-gpg --export your_acces_key | base64 
+gpg --export your_acces_key | base64
 ```
 
 There are also free online platforms that specialize in trading secrets, but we do not recommend it. If you really need to use it, do not share the APPLICATION_SECRET and APPLICATION_ID in the same message and avoid any reference to the DiagRAMS API.
 
 ## Secret stolen?
 
-If you think your secret is compromised for any reason, please [inform us](support@diagrams-technologies.com) as soon as possible. We will instantly disable it and provide you with new credentials.
+If you think your secret is compromised for any reason, please [inform us](mailto:support-diagrams@dv-group.com?subject=Secret%20leak) as soon as possible. We will instantly disable it and provide you with new credentials.
+
+You can also disable any applications by modifying it in the application.

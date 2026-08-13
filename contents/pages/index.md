@@ -21,5 +21,5 @@ The codebase of this website is publicly available on Github. If you notice mist
 
 ## Support
 
-If you encounter any problem or inconsistency, feel free to let us know as soon as possible at this email: [support@diagrams-technologies.com](mailto:support@diagrams-technologies.com?subject=Help%20on%20DiagRAMS%20API).
+If you encounter any problem or inconsistency, feel free to let us know as soon as possible at this email: [support-diagrams@dv-group.com](mailto:support-diagrams@dv-group.com?subject=Help%20on%20DiagRAMS%20API).
 We can provide you with all the help you need.

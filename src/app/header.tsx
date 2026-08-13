@@ -31,6 +31,11 @@ const MENU_ITEMS = [
     path: "/news",
     isHome: false,
   },
+  {
+    name: "AI MCP Connector",
+    path: "/mcp-wire",
+    isHome: false,
+  },
 ];
 
 export default function Header() {

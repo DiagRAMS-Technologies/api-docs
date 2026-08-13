@@ -13,7 +13,7 @@ illustration:
 
 For our API versioning, we are relying on [semantic versioning](https://semver.org/). As long as we do not upgrade the major version, any changes we make on the API have to be backward compatible.
 
-If you hit any breaking change during a minor or patch update, feel free [to warn us](mailto:support@diagrams-technologies.com), we will take care to fix the issue.
+If you hit any breaking change during a minor or patch update, feel free [to warn us](mailto:support-diagrams@dv-group.com?subject=About%20upgrades), we will take care to fix the issue.
 
 Otherwise, for major changes, we will warn you 6 months before the change in order to let you prepare your codebase. We will try to make the changes the least annoying and always take backward compatibility for first approach.
 

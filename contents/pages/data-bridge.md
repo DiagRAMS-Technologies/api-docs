@@ -15,7 +15,7 @@ On the other hand, we can enable **the pull mode**. With this mode, we regularly
 
 ## ML Project setup
 
-In either push and pull mode, we will first need to create an `ML_PROJECT` code. If you don't have it already, [contact us](mailto:support@diagrams-technologies.com?subject=Ml%20project%20code%20request).
+In either push and pull mode, we will first need to create an `ML_PROJECT` code. If you don't have it already, [contact us](mailto:support-diagrams@dv-group.com?subject=Ml%20project%20code%20request).
 
 ## Push mode through our HTTPS API
 
@@ -88,4 +88,4 @@ To use our [OsisoftPI](https://www.aveva.com/en/products/aveva-pi-system/) data 
 
 ### Custom API bridge
 
-We can study any API data bridge development if you provide us with the documentation. Feel free to [contact us](mailto:support@diagrams-technologies.com?subject=custom+data+bridge+request).
+We can study any API data bridge development if you provide us with the documentation. Feel free to [contact us](mailto:support-diagrams@dv-group.com?subject=Custom+data+bridge+request).
