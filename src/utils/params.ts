@@ -4,8 +4,7 @@ export type RawQueryParams = Record<string, string | string[]>;
 export type CastedQueryParamItem = boolean | number | string;
 export type CastedQueryParamCollection = boolean[] | number[] | string[];
 export type CastedQueryParam =
-  | CastedQueryParamItem
-  | CastedQueryParamCollection;
+  CastedQueryParamItem | CastedQueryParamCollection;
 export type CastedQueryParams = Record<string, CastedQueryParam>;
 export type QueryParamType = "boolean" | "number" | "string";
 export type QueryParamCastedTypes = {
