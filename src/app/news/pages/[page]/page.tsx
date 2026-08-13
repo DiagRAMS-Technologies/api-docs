@@ -1,12 +1,9 @@
 import { pathJoin } from "../../../../utils/files";
 import { readEntries } from "../../../../utils/frontmatter";
 import { buildAssets } from "../../../../utils/build";
-import NewsEntries, {
-  type Params,
-  entriesToBaseListingMetadata,
-  generateMetadata,
-} from "../../page";
+import NewsEntries, { type Params, generateMetadata } from "../../page";
 import { type NewsFrontmatterMetadata } from "../../../../utils/news";
+import { entriesToBaseListingMetadata } from "../../utils";
 
 export { generateMetadata };
 

@@ -1,4 +1,4 @@
-import { entriesToBaseListingMetadata } from "../page";
+import { entriesToBaseListingMetadata } from "../utils";
 import { readEntries } from "../../../utils/frontmatter";
 import { fixText } from "../../../utils/text";
 import { pathJoin } from "../../../utils/files";
@@ -35,7 +35,7 @@ export async function generateMetadata(props: {
   });
 }
 
-export async function BlogPost(props: { params: Promise<Params> }) {
+export default async function BlogPost(props: { params: Promise<Params> }) {
   const { id } = await props.params;
   const baseProps = entriesToBaseListingMetadata(
     await readEntries<NewsFrontmatterMetadata>(
@@ -63,8 +63,6 @@ export async function BlogPost(props: { params: Promise<Params> }) {
     </ContentBlock>
   );
 }
-
-export default BlogPost;
 
 export async function generateStaticParams(): Promise<Params[]> {
   const baseProps = entriesToBaseListingMetadata(

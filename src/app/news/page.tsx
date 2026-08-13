@@ -1,9 +1,6 @@
 import styles from "./page.module.scss";
 import { readEntries } from "../../utils/frontmatter";
-import { toASCIIString } from "../../utils/ascii";
 import { readParams } from "../../utils/params";
-import { parseMarkdown } from "../../utils/markdown";
-import { datedPagesSorter } from "../../utils/contents";
 import { pathJoin } from "../../utils/files";
 import ContentBlock from "../contentBlock";
 import Heading1 from "../../components/h1";
@@ -11,12 +8,11 @@ import Paragraph from "../../components/p";
 import Anchor from "../../components/a";
 import Items from "./items";
 import { type BasePagingPageMetadata } from "../../utils/contents";
-import { type FrontMatterResult } from "front-matter";
-import { type MarkdownRootNode } from "../../utils/markdown";
 import { type News, type NewsFrontmatterMetadata } from "../../utils/news";
 
 import { type Metadata } from "next";
 import buildMetadata from "@/utils/metadata";
+import { entriesToBaseListingMetadata, POSTS_PER_PAGE } from "./utils";
 
 export async function generateMetadata(props: {
   params?: Promise<{ page: string }>;
@@ -58,8 +54,6 @@ const PARAMS_DEFINITIONS = {
 } as const;
 
 export type Params = { page: string };
-
-const POSTS_PER_PAGE = 10;
 
 export default async function Page(props: { params: Promise<Params> }) {
   const params = await props.params;
@@ -112,27 +106,4 @@ export default async function Page(props: { params: Promise<Params> }) {
       </nav>
     </ContentBlock>
   );
-}
-
-export function entriesToBaseListingMetadata(
-  baseEntries: FrontMatterResult<NewsFrontmatterMetadata>[],
-) {
-  const title = `Developer news`;
-  const description = "Discover the latest technical news from DiagRAMS.";
-  const entries = baseEntries
-    .map<News>((entry) => ({
-      ...entry.attributes,
-      id: entry.attributes.leafname || toASCIIString(entry.attributes.title),
-      content: parseMarkdown(entry.body) as MarkdownRootNode,
-    }))
-    .filter((entry) => !entry.draft || process.env.NODE_ENV === "development")
-    .sort(datedPagesSorter);
-  const pagesCount = Math.ceil(entries.length / POSTS_PER_PAGE);
-
-  return {
-    title,
-    description,
-    entries,
-    pagesCount,
-  };
 }
