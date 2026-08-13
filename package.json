@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build && touch out/.nojekyll && echo 'docs.diagrams-technologies.com' > out/CNAME",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack && touch out/.nojekyll && echo 'docs.diagrams-technologies.com' > out/CNAME",
     "jest": "jest",
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write **/*.{ts,tsx,css,scss}",

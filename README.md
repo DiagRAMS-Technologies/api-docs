@@ -16,7 +16,7 @@ to simply use CSS but in a scoped way. We chosen it for:
 - its fit with our very custom design that enforce us to have a lot of custom
   components
 
-We use Jest for testing and components librairies in order to
+We use Jest for testing and components libraries in order to
 build interfaces starting by components.
 
 ## Setup your local environment

@@ -11,11 +11,11 @@ import { type Metadata } from "next";
 import buildMetadata from "@/utils/metadata";
 import { notFound } from "next/navigation";
 
-type Params = { id: string };
+type Params = Awaited<PageProps<"/news/[id]">["params"]>;
 
-export async function generateMetadata(props: {
-  params: Promise<Params>;
-}): Promise<Metadata> {
+export async function generateMetadata(
+  props: PageProps<"/news/[id]">,
+): Promise<Metadata> {
   const { id } = await props.params;
   const baseProps = entriesToBaseListingMetadata(
     await readEntries<NewsFrontmatterMetadata>(
@@ -35,7 +35,7 @@ export async function generateMetadata(props: {
   });
 }
 
-export async function BlogPost(props: { params: Promise<Params> }) {
+export async function BlogPost(props: PageProps<"/news/[id]">) {
   const { id } = await props.params;
   const baseProps = entriesToBaseListingMetadata(
     await readEntries<NewsFrontmatterMetadata>(

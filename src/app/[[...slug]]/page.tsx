@@ -25,11 +25,11 @@ type Entry = {
   content: MarkdownRootNode;
 } & PageFrontmatterMetadata;
 
-type Params = { slug: string[] };
+type Params = Awaited<PageProps<"/[[...slug]]">["params"]>;
 
-export async function generateMetadata(props: {
-  params: Promise<Params>;
-}): Promise<Metadata> {
+export async function generateMetadata(
+  props: PageProps<"/[[...slug]]">,
+): Promise<Metadata> {
   const { slug = [] } = await props.params;
   const entry = await parsePage(slug);
 
@@ -48,7 +48,7 @@ export async function generateMetadata(props: {
   });
 }
 
-export default async function Page(props: { params: Promise<Params> }) {
+export default async function Page(props: PageProps<"/[[...slug]]">) {
   const { slug } = await props.params;
   const entry = await parsePage(slug);
   const contentWithSummary = insertSummary(entry.content);
@@ -63,7 +63,7 @@ export default async function Page(props: { params: Promise<Params> }) {
 
 export async function generateStaticParams(): Promise<Params[]> {
   const base = pathJoin(".", "contents", "pages");
-  const params = (await readDirDeep(`${base}/**/*.md`)).map((path) => {
+  const paths = (await readDirDeep(`${base}/**/*.md`)).map((path) => {
     const slug = path
       .replace(base + "/", "")
       .replace(".md", "")
@@ -75,8 +75,7 @@ export async function generateStaticParams(): Promise<Params[]> {
 
     return { slug };
   });
-
-  return params;
+  return paths;
 }
 
 async function parsePage(slug: string[] = []): Promise<Entry> {
@@ -85,7 +84,7 @@ async function parsePage(slug: string[] = []): Promise<Entry> {
 
   try {
     result = await readEntry<PageFrontmatterMetadata>(path + ".md");
-  } catch (err) {
+  } catch {
     result = await readEntry<PageFrontmatterMetadata>(path + "/index.md");
   }
 
