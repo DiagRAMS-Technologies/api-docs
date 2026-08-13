@@ -1,2 +1,2 @@
-:HL["https://docs.diagrams-technologies.com/_next/static/chunks/0cp25b17b6ye0.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"csCu2zjjVHDEuMgIG3Mvr"}
+:HL["https://docs.diagrams-technologies.com/_next/static/chunks/13321utrup0w9.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"nr7TyIuNZvC8pcYtBRSWE"}

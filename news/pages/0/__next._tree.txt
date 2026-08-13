@@ -1,8 +1,8 @@
-:HL["https://docs.diagrams-technologies.com/_next/static/chunks/0cp25b17b6ye0.css","style"]
-:HL["https://docs.diagrams-technologies.com/_next/static/chunks/0do0a3a-ut_vn.css","style"]
-:HL["https://docs.diagrams-technologies.com/_next/static/chunks/175kt23ll6c8_.css","style"]
+:HL["https://docs.diagrams-technologies.com/_next/static/chunks/13321utrup0w9.css","style"]
+:HL["https://docs.diagrams-technologies.com/_next/static/chunks/169h7humrku3q.css","style"]
+:HL["https://docs.diagrams-technologies.com/_next/static/chunks/41dxw9vx0m_dd.css","style"]
 :HL["/illustrations/StoringSecrets.jpg","image"]
 :HL["/illustrations/UpgradeMethodology.jpg","image"]
 :HL["/illustrations/Security.jpg","image"]
 :HL["/illustrations/ChtiJS23.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"news","param":null,"prefetchHints":0,"slots":{"children":{"name":"pages","param":null,"prefetchHints":0,"slots":{"children":{"name":"page","param":{"type":"d","key":"0","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"csCu2zjjVHDEuMgIG3Mvr"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"news","param":null,"prefetchHints":4192,"slots":{"children":{"name":"pages","param":null,"prefetchHints":4192,"slots":{"children":{"name":"page","param":{"type":"d","key":"0","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}}}},"staleTime":300,"buildId":"nr7TyIuNZvC8pcYtBRSWE"}
