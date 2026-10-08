@@ -15,11 +15,18 @@ On the other hand, we can enable **the pull mode**. With this mode, we regularly
 
 ## ML Project setup
 
-In either push and pull mode, we will first need to create an `ML_PROJECT` code. If you don't have it already, [contact us](mailto:support-diagrams@dv-group.com?subject=Ml%20project%20code%20request).
+To start sending us data, you will need the following information:
+
+- `ML_PROJECT`: the code of the anomaly detection project you created,
+- `ORGANISATION_ID`: the organisation id of your company in our systems,
+
+In either push and pull mode, we will first need to create a project and to get back a `ML_PROJECT` code from it. In the application, chose "Projects" from the "Factory" menu and create the company project.
+
+If you have any issue, feel free to [contact us](mailto:support-diagrams@dv-group.com?subject=Ml%20project%20code%20request).
 
 ## Push mode through our HTTPS API
 
-_If you use Node-RED, you may want to directly use [our custom flows](https://flows.nodered.org/node/node-red-diagrams-bridge) to push your data._
+_If you use Node-RED, you may want to directly use [our custom flows](https://flows.nodered.org/node/@dvgroup/api-bridge-node-red) to push your data._
 
 First, you need to generate an access token, see [Authentication](/authentication).
 

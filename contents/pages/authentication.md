@@ -13,12 +13,12 @@ We're excited to have you on board and help you get started with sending data to
 
 ## First task!
 
-To start sending us data, you will need the following information, [please contact us](mailto:support-diagrams@dv-group.com?subject=Application%20credentials%20request) if you didn't get them:
+To authenticate yourself, you will need the following information:
 
-- `ML_PROJECT`: the code of the anomaly detection project we created for you,
-- `ORGANISATION_ID`: the organisation id of your company in our systems,
-- `APPLICATION_ID`: the id of the application we created for you,
+- `APPLICATION_ID`: the id of the application,
 - `APPLICATION_SECRET`: a unique string to keep secret that authenticates you.
+
+To create an application, use the "Applications" item on the "Factory" menu. If you have an issue, [please contact us](mailto:support-diagrams@dv-group.com?subject=Application%20credentials%20request).
 
 ## Generate token
 
