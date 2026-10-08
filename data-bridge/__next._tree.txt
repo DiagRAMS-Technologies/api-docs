@@ -4,4 +4,4 @@
 :HL["https://docs.diagrams-technologies.com/_next/static/css/e18af343312bb047.css","style"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":{"n":"slug","t":"oc","k":"data-bridge","s":["_not-found","_global-error","api-reference","news"]},"h":96,"c":"$Q2"}]]
-0:{"b":"2GviFKuvdg2ktcBgK3se8","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"q-u0SsJk2WRKVg0VEsg4x","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
