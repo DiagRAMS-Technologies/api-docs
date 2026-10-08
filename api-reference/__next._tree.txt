@@ -1,4 +1,6 @@
 :HL["https://docs.diagrams-technologies.com/_next/static/css/2563c3c409ba9899.css","style"]
-:HL["https://docs.diagrams-technologies.com/_next/static/css/7ab61df9d4ee6f0c.css","style"]
+:HL["https://docs.diagrams-technologies.com/_next/static/css/41876e666e75098a.css","style"]
 :HL["https://docs.diagrams-technologies.com/_next/static/css/bc597d79ca3b303e.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"api-reference","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"DQi4--kxnEhYjpFkU9Ref"}
+2:[["children",{"s":"__PAGE__","h":160}]]
+1:[["children",{"s":"api-reference","h":96,"c":"$Q2"}]]
+0:{"b":"2GviFKuvdg2ktcBgK3se8","t":{"t":{"s":"","h":80,"c":"$Q1"}}}

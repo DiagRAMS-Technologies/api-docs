@@ -2,4 +2,6 @@
 :HL["https://docs.diagrams-technologies.com/_next/static/css/668158ef1327e239.css","style"]
 :HL["https://docs.diagrams-technologies.com/_next/static/css/bc597d79ca3b303e.css","style"]
 :HL["https://docs.diagrams-technologies.com/_next/static/css/e18af343312bb047.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"slug","param":{"type":"oc","key":"mcp-wire","siblings":["_not-found","_global-error","api-reference","news"]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"DQi4--kxnEhYjpFkU9Ref"}
+2:[["children",{"s":"__PAGE__","h":160}]]
+1:[["children",{"s":{"n":"slug","t":"oc","k":"mcp-wire","s":["_not-found","_global-error","api-reference","news"]},"h":96,"c":"$Q2"}]]
+0:{"b":"2GviFKuvdg2ktcBgK3se8","t":{"t":{"s":"","h":80,"c":"$Q1"}}}

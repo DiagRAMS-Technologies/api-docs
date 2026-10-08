@@ -1,2 +1,4 @@
 :HL["https://docs.diagrams-technologies.com/_next/static/css/2563c3c409ba9899.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"_not-found","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"DQi4--kxnEhYjpFkU9Ref"}
+2:[["children",{"s":"__PAGE__","h":160}]]
+1:[["children",{"s":"_not-found","h":96,"c":"$Q2"}]]
+0:{"b":"2GviFKuvdg2ktcBgK3se8","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
